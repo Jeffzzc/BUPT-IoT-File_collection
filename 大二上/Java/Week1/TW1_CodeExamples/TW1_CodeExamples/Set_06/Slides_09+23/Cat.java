@@ -1,0 +1,36 @@
+public class Cat {
+  private String name;
+  private String colour;
+  private int age;
+
+  public Cat() {  }
+
+  public Cat(String name) {
+    this.name = name;
+  }
+
+  /**
+   * This method gets the colour of the cat.
+   * @return String  Colour of the cat.
+   */
+  public String getColour() {
+    return colour;
+  }
+
+  /**
+   * This method sets the name of the cat.
+   * @param name  Name the cat should have.
+   */
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+  public void meow() {
+    System.out.println("Meow! Meow");
+  }
+
+  public void eat() {
+    System.out.println("Yummy! Yummy");
+  }
+
+} // end class Cat
