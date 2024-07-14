@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"Task2","c":"SuperHeroTTTask2","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"Task2","c":"SuperHeroTTTask2","l":"SuperHeroTTTask2()","u":"%3Cinit%3E()"}];updateSearchResults();
