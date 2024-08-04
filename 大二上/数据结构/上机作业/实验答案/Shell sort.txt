@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main(){
+	int size;
+	char str[101];
+	char *p;
+	int i=0,j=0,k=0,m=0;
+	int arr[101];
+	int increase[5];
+	int temp;
+	scanf("%d",&size);
+	scanf("%s",str);
+	p=strtok(str,",");
+	while(p){
+		arr[i]=atoi(p);
+		p=strtok(NULL,",");
+        i++;        
+    }
+    scanf("%s",str);
+	p=strtok(str,",");
+	while(p){
+		increase[j]=atoi(p);
+		p=strtok(NULL,",");
+        j++;        
+    }
+    for(k=0;k<j;k++){
+    	for(i=increase[k];i<size;i++){
+    		temp=arr[i];
+    		for(m=i;m>=increase[k];m-=increase[k])
+    			if(temp>arr[m-increase[k]])
+    			 	arr[m]=arr[m-increase[k]];
+    			else
+    				break;
+    			arr[m]=temp;
+		}
+		for(m=0;m<size;m++)
+			printf("%d,",arr[m]);
+		printf("\n");
+	}
+	return 0;
+}

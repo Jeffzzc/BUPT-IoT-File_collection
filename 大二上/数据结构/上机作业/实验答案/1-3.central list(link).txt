@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <malloc.h>
+
+typedef struct linklist
+{
+	int num;
+	struct linklist *NEXT;
+	struct linklist *FRONT;
+}*LIST;
+
+int main()
+{
+	LIST head,tail,l1,l2,p;
+	tail = (LIST)malloc(sizeof(struct linklist));
+	head = tail;
+	
+	scanf("%d,",&tail->num);
+	//构建双向链表
+	for(;getchar()!='\n';tail = tail->NEXT)
+	{
+		p = (LIST)malloc(sizeof(struct linklist));
+		scanf("%d,",&p->num);
+		p->FRONT = tail;
+		tail->NEXT=p;
+	}
+	tail->NEXT = NULL;
+	//从双端遍历
+	for(l1 = head,l2 = tail;l1->NEXT != l2->FRONT;l1 = l1->NEXT,l2 = l2->FRONT)
+	{
+		if(l1->num != l2->num)
+		{
+			printf("No");
+			return 0;
+		}
+	}
+	printf("Yes");
+	
+	return 0;
+}

@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct Node
+{
+    int num;
+    struct Node* pnext;
+ } Node;
+ int main(void)
+ {
+    int M,N,i;
+    Node* Head;
+    Node* p;
+    Node* q;
+     
+    scanf("%d,%d",&N,&M);
+    Head=(Node*)malloc(sizeof(Node));
+    p=Head;
+    Head->pnext=NULL;
+    for(i=1;i<N;i++)
+    {
+         
+        p->num = i;
+        q = (Node*)malloc(sizeof(Node));
+        p->pnext=q;
+        p=p->pnext;
+     }
+     p->num=N;
+     p->pnext=Head;
+     p=Head;
+     i=1;
+     while(1)
+     {
+        if(p==p->pnext)
+        {
+            printf("%d",p->num);//输出最后一个
+            break;
+         }
+         if(i==M)
+         {
+            printf("%d,",p->pnext->num);
+            q=p->pnext;
+            p->pnext=q->pnext;
+            free(q);//离开	
+            p=p->pnext;
+            i=1;//重新计数
+         }
+         else
+         {
+            i++;//序数增加
+            p=p->pnext;
+         }
+     }
+     return 0;
+ }

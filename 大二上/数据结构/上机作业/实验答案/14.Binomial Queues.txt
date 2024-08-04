@@ -1,0 +1,125 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+typedef struct BinNode*Position;
+typedef struct Collection *BinQueue;
+typedef struct BinNode*BinTree;
+#define MaxTrees 100
+#define Capacity 100
+struct BinNode
+{
+	int Element;
+	Position LeftChild;
+	Position NextSibling;
+};
+struct Collection
+{
+	int CurrentSize;
+	BinTree TheTrees[MaxTrees];
+};
+BinTree CombineTrees(BinTree T1, BinTree T2)
+{
+	if (T1->Element > T2->Element)
+		return CombineTrees(T2, T1);
+	T2->NextSibling = T1->LeftChild;
+	T1->LeftChild = T2;
+	return T1;
+}
+BinQueue  Merge(BinQueue H1, BinQueue H2)
+{
+	BinTree T1, T2, Carry;
+	int i, j;
+	Carry = T1 = T2 = NULL;
+	if (H1->CurrentSize + H2->CurrentSize > Capacity)
+		printf("Error");
+	H1->CurrentSize += H2->CurrentSize;
+	for (i = 0, j = 1; j <= H1->CurrentSize; i++, j *= 2) {
+		T1 = H1->TheTrees[i]; T2 = H2->TheTrees[i]; /*current trees */
+		switch (4 * !!Carry + 2 * !!T2 + !!T1) { /* assign each digit to a tree */
+		case 0: /* 000 */
+		case 1: /* 001 */  break;
+		case 2: /* 010 */  H1->TheTrees[i] = T2; H2->TheTrees[i] = NULL; break;
+		case 4: /* 100 */  H1->TheTrees[i] = Carry; Carry = NULL; break;
+		case 3: /* 011 */  Carry = CombineTrees(T1, T2);
+			H1->TheTrees[i] = H2->TheTrees[i] = NULL; break;
+		case 5: /* 101 */  Carry = CombineTrees(T1, Carry);
+			H1->TheTrees[i] = NULL; break;
+		case 6: /* 110 */  Carry = CombineTrees(T2, Carry);
+			H2->TheTrees[i] = NULL; break;
+		case 7: /* 111 */  H1->TheTrees[i] = Carry;
+			Carry = CombineTrees(T1, T2);
+			H2->TheTrees[i] = NULL; break;
+		} /* end switch */
+	} /* end for-loop */
+	return H1;
+}
+BinQueue CreateQueue(int n)
+{
+	BinQueue h;
+	BinTree T;
+	int i;
+	T = NULL;
+	T = malloc((BinTree)sizeof(struct BinNode));
+	if (T == NULL)
+		printf("Error");
+	h = malloc(sizeof(struct Collection));
+	if (h == NULL)
+		printf("Creat false");
+	for (i = 0; i < MaxTrees; i++)
+		h->TheTrees[i] = NULL;
+	T->LeftChild = T->NextSibling = NULL;
+	T->Element = n;
+	h->CurrentSize = 1;
+	h->TheTrees[0] = T;
+	return h;
+}
+void Printinlevel(BinTree T)
+{
+	if (T)
+	{
+		Printinlevel(T->NextSibling);
+		printf("%d,", T->Element);
+		Printinlevel(T->LeftChild);
+
+	}
+	
+}
+int main()
+{
+	BinTree T1, T2;
+	BinQueue H1, H2;
+	struct BinNode t1, t2;
+	char str[500], *p;
+	int n[500], level;
+	int i, sum;
+	i = 0;
+	T1 = T2 = NULL;
+	H1 = H2 = NULL;
+	scanf("%s", &str);
+	scanf("%d", &level);
+	p = strtok(str, ",");
+	while (p)
+	{
+		n[i] = atoi(p);
+		p = strtok(NULL, ",");
+		i++;
+	}
+	sum = i;
+	H1 = CreateQueue(n[0]);
+	if (sum > 1) {//至少有两个数
+		for (i = 1; i < sum; i++)
+		{
+			H2 = CreateQueue(n[i]);
+			H1 = Merge(H1, H2);
+		}
+	}
+
+	if (H1->TheTrees[level] == NULL)
+		printf("0,");
+	else
+		Printinlevel(H1->TheTrees[level]);
+	//printf("\n%d", H1->CurrentSize);
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+int  main()
+{
+     char num[80]={};
+     int i,mid;
+     scanf("%s",num);
+     mid=strlen(num)/2;
+     for(i=0;i<=mid;i++)
+     {
+        if(num[mid+i]!=num[mid-i])
+        {
+        	printf("No"); 
+	return;
+        }
+     }  
+    printf("Yes");   	                
+}

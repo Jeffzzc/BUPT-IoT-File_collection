@@ -1,0 +1,189 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct node
+{
+    char ele;
+    float num;
+    struct node* next;
+}Node;
+typedef Node* Stack;
+
+Stack MakeStack();
+void MakeNUll(Stack S);
+void Pop(Stack S);
+void PushChar(Stack S, char c);
+void PushNum(Stack S, float c);
+char VisitHeadEle(Stack S);
+
+Stack MakeStack()//新建栈并返回栈顶
+{
+    Stack S = (Node *)malloc(sizeof(Node));
+    MakeNUll(S);
+    return S;
+}
+
+void MakeNUll(Stack S)//置空栈
+{
+    S->next = NULL;
+}
+
+void Pop(Stack S)//将栈顶弹出
+{
+    Stack temp = S->next;
+    S->next = temp->next;
+}
+
+void PushChar(Stack S, char c)//将新节点压入栈
+{
+    Stack temp = (Node *)malloc(sizeof(Node));
+    temp->ele = c;
+    temp->next = S->next;
+    S->next = temp;
+}
+
+void PushNum(Stack S, float c)
+{
+    Stack temp = (Node *)malloc(sizeof(Node));
+    temp->num = c;
+    temp->next = S->next;
+    S->next = temp;	
+}
+
+char VisitHeadEle(Stack S)//打印栈顶元素
+{
+    if (S->next!=Null)
+    	return S->next->ele;
+    else
+    	return Null;
+}
+
+char VisitHeadNum(Stack S)//打印栈顶元素
+{
+    if (S->next!=Null)
+    	return S->next->Num;
+    else
+    	return Null;
+}
+
+int main()
+{
+    Stack S = MakeStack();
+    int i = 0, u = 0, len;
+    float te;
+    char infix[50]={}, postfix[50]={};
+    scanf("%s", str);
+    len = strlen(str);
+	 
+    for(i = 0; i < len; i++)
+    {
+        if(infix[i] == '+' || infix[i] == '-')//如果infix[i]是加号或减号，则先弹出栈顶直到栈已空或栈顶元素为左括号，再将infix[i]压入栈
+        {
+            while(VisitHeadEle(S) != NULL)
+            {
+            	if(VisitHeadEle(S)->ele == '+' || VisitHeadEle(S)->ele == '-' || VisitHeadEle(S)->ele == '*' || VisitHeadEle(S)->ele == '/')
+            	{
+                    postfix[u++] = VisitHeadEle(S);
+                    Pop(S);		
+            	}
+            	else
+            	    break;
+            }
+            PushChar(S, infix[i]);
+        }
+
+        else if(infix[i] == '*' || infix[i] == '/')//如果infix[i]是乘号或除号，则只有栈顶也是乘除号时才需要弹出
+        {
+            while(VisitHeadEle(S) != NULL)
+            {
+            	if(VisitHeadEle(S)->ele == '*' || VisitHeadEle(S)->ele == '/')
+            	{
+                    postfix[u++] = VisitHeadEle(S);
+                        Pop(S);            		
+            	}
+            	else
+            				break;
+            }
+            PushChar(S, infix[i]);
+        }
+
+        else if(infix[i] == '(')//如果infix[i]是左括号则直接压入栈
+        {
+            PushChar(S, infix[i]);
+        }
+
+        else if(infix[i] == ')')//如果infix[i]是右括号，则打印并弹出栈中第一个左括号前的所有操作符，最后将此左括号直接弹出
+        {
+            while(VisitHeadEle(S)->ele != '(')
+            {
+                postfix[u++] = VisitHeadEle(S);
+                Pop(S);
+            }
+            Pop(S);
+        }
+
+        else//如果infix[i]不是操作符则直接打印
+        {
+            postfix[u++] = infix[i];
+        }
+    }
+
+    while(VisitHeadEle(S) != NULL)//遍历后如果栈不为空，则弹出所有操作符
+    {
+        postfix[u++] = VisitHeadEle(S);
+        Pop(S);
+    }
+    
+	len = strlen(postfix);
+	Stack C = MakeStack();
+	for(i = 0; i < len; i++)
+	{
+		if(postfix[i] >= '0' && postfix[i] <= '9')
+		{
+			PushNum(C, postfix[i] - '0');
+		}
+		
+		else if(postfix[i] == '*')
+		{
+			te = VisitHeadNum(C);
+			Pop(C);
+			te *= VisitHeadNum(C);
+			Pop(C);
+			PushNum(C, te);
+		}
+		
+		else if(postfix[i] == '/')
+		{
+			te = VisitHeadNum(C);
+			Pop(C);
+			te = VisitHeadNum(C) / te;
+			Pop(C);
+			PushNum(C, te);
+		}
+		
+		else if(postfix[i] == '+')
+		{
+			te = VisitHeadNum(C);
+			Pop(C);
+			te += VisitHeadNum(C);
+			Pop(C);
+			PushNum(C, te);
+		}
+
+		else if(postfix[i] == '-')
+		{
+			te = VisitHeadNum(C);
+			Pop(C);
+			te = VisitHeadNum(C) - te;
+			Pop(C);
+			PushNum(C, te);
+		}
+	}
+	
+	printf("%.2f\n", VisitHeadNum(C));
+	for(i = 0; i < len; i++)
+	    printf("%c ", postfix[i]);
+		
+    return 0;
+}

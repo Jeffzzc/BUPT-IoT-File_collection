@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct TreeNode *PtrToNode;
+typedef struct TreeNode *Tree; 
+typedef char ElementType;
+
+struct TreeNode
+{
+	ElementType Element;
+	Tree Left;
+	Tree Right;
+};
+
+//先序遍历表达式树
+void PreorderTraverse(PtrToNode T)
+{
+	if(T == NULL)
+		return;
+	printf("%c ",T->Element);
+	PreorderTraverse(T->Left);
+	PreorderTraverse(T->Right);
+}
+//构造表达式树
+PtrToNode CreateExpressionTree(char input[],PtrToNode T)
+{
+	PtrToNode stack[50];
+	int i = 0, j = 0, top = -1;
+	PtrToNode TNode, T1, T2;
+	char token=input[i]
+	while( token!= '\0')
+	{
+		if(token >= '0' && token <= '9')
+		{
+			TNode = malloc(sizeof(Tree));
+			TNode->Element = token;
+			TNode->Left = TNode->Right = NULL;
+			top++;
+			stack[top] = TNode;
+		}
+		
+		if(token == '+' || token == '-' || token == '*' || token== '/')
+		{
+			TNode = malloc(sizeof(Tree));
+			TNode->Element = token;
+			T2 = stack[top];
+			top--;
+			T1 = stack[top];
+			top--;
+			TNode->Left = T1;
+			TNode->Right = T2;
+			top++;
+			stack[top] = TNode;
+		}
+
+		i++;
+	}
+	
+	T = TNode;
+	
+	return T;
+}
+
+int main()
+{
+	PtrToNode T = NULL;
+	char input[100]={}, n[50]={};
+	int i = 0, j = 0;
+	gets(input);
+	while(input[i] != '\0')
+	{
+		n[j] = input[i];
+		i+=2;
+		j++;
+	} 
+	n[j] = '\0';
+	
+	T = CreateExpressionTree(n,T);
+	PreorderTraverse(T);
+	
+	return 0;
+}

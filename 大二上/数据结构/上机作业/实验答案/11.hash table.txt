@@ -1,0 +1,24 @@
+#include<stdio.h>
+int Hash(int table[],int key,int n)
+{
+	if(table[(key+n-1)%13]==0)
+	{
+	    table[(key+n-1)%13]=key;
+	    return n;
+	}
+	else 
+	    Hash(table,key,n+1);	
+}
+int main()
+{
+	int table[13]={};
+	int i,count,find_times=0;
+ 	while(scanf("%d,",&i)!=EOF)
+	{
+	    find_times+=Hash(table,i,1);
+	    count ++;
+	}
+	printf("%.2f",(float)count/13);
+	printf("\n%.2f",(float)find_times/count); 
+	return 0;	
+ } 

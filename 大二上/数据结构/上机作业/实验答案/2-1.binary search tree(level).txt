@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+#include<string.h>
+#define SIZE 1000
+typedef struct TreeNode{
+    int element;
+    struct TreeNode *Left;
+    struct TreeNode *Right;
+}*SearchTree;
+ 
+SearchTree Insert(int x,SearchTree T){
+    if(T==NULL){
+        T=malloc(sizeof(struct TreeNode));
+        if(T==NULL)
+            return;
+        else{
+            T->element=x;
+            T->Left=T->Right=NULL;
+        }
+    }
+    else if(x<T->element)
+        T->Left=Insert(x,T->Left);
+    else if(x>T->element)
+        T->Right=Insert(x,T->Right);      
+    return T;
+}
+ 
+int FindTreeDeep(SearchTree T){
+    int deep=0;
+    int ldeep,rdeep;
+    if(T!=NULL)
+    {
+        ldeep=FindTreeDeep(T->Left);
+        rdeep=FindTreeDeep(T->Right);
+        deep=ldeep>rdeep?ldeep+1:rdeep+1;
+    }
+    return deep;
+}
+ 
+void TraverseLevel(SearchTree T,int level){
+    if(T==NULL)
+        return;
+    else if(level==1)
+        printf("%d,",T->element);
+    else{
+        TraverseLevel(T->Left,level-1);
+        TraverseLevel(T->Right,level-1);
+    }
+}
+ 
+int main(){
+    int i,size;
+    scanf("%d\n",&size);
+     
+    SearchTree T;
+    T=NULL;
+    char data[SIZE];
+    scanf("%s\n",data);
+    char* delim=",";
+    char* p=strtok(data,delim);
+    int element;
+    element=atoi(p);
+    for(i=0;i<size;i++) {
+        T=Insert(element,T);
+        p=strtok(NULL,delim);
+        if(p==NULL)
+        	break;
+        element=atoi(p);
+    }
+     
+    int level,deep;
+    deep=FindTreeDeep(T);
+    scanf("%d",&level);
+    if(level>deep)
+        printf("-1");
+    else
+        TraverseLevel(T,level);
+     
+    return 0;
+}

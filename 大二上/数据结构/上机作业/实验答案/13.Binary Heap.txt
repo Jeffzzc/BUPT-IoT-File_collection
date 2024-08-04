@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+typedef struct HeapStruct
+{
+	int Capacity;
+	int Size;
+	int *Elements;
+	
+}*PriorityQueue;
+
+PriorityQueue Initialize(int MaxSize)
+{
+	PriorityQueue Q;
+	Q = (PriorityQueue)malloc(sizeof(struct HeapStruct));
+	if(!Q)
+		printf("OUT OF SPACE!!!");
+	Q->Elements = (int*)malloc((MaxSize + 1)*sizeof(int));
+	if(!Q->Elements)
+		printf("OUT OF SPACE!!!");
+	Q->Capacity = MaxSize;
+	Q->Size = 0;
+	Q->Elements[0] = 0;
+	return Q;
+}
+
+void Insert(int element, PriorityQueue Q)
+{
+	int  i; 
+	for(i = ++Q->Size ; Q->Elements[i / 2] > element ; i /= 2 )
+    	Q->Elements[i] = Q->Elements[i / 2]; 
+	Q->Elements[i] = element;
+}
+
+void Insert1(int element, PriorityQueue Q)
+{
+	int  i; 
+	i = ++Q->Size;
+	Q->Elements[i] = element;
+}
+
+void PercolateDown(int i , PriorityQueue Q)          
+{
+    int Temp;
+    int child;
+ 
+    for (Temp = Q->Elements[i]; 2 * i <= Q->Size; i = child)
+    {
+        child = 2 * i;
+        if (Q->Elements[child + 1] && Q->Elements[child + 1] < Q->Elements[child])   
+            child++;
+        if (Temp > Q->Elements[child])                  
+            Q->Elements[i] = Q->Elements[child];              
+        else
+            break;
+    }
+    Q->Elements[i] = Temp;
+}
+
+int main()
+{
+	PriorityQueue Q1,Q2;
+	int MaxSize,element,i,j,Min;
+	char c = ',';
+	scanf("%d",&MaxSize);
+	Q1 = Initialize(MaxSize);
+	Q2 = Initialize(MaxSize);
+	while(c == ',')
+	{
+		scanf("%d",&element);
+		Insert(element, Q1);
+		Insert1(element, Q2);
+		c=getchar();
+	}
+	for(i = Q2->Size/2 ; i > 0 ; i--)
+	{
+		PercolateDown(i,Q2);
+		for(j = Q2->Size/2 ; j > i ; j--)
+		{
+			PercolateDown(j,Q2);
+		}
+	}
+	for(i = 1 ; i < Q1->Size ; i++)
+		printf("%d,",Q1->Elements[i]);
+	printf("%d",Q1->Elements[i]);
+	printf("\n");
+	for(i = 1 ; i < Q2->Size ; i++)
+		printf("%d,",Q2->Elements[i]);
+	printf("%d",Q2->Elements[i]);
+	printf("\n");
+	return 0;
+}
+//3,5,4,2,1

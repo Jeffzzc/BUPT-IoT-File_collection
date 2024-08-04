@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int matrix[10][10]={};
+	int num;
+	int value,i,j;
+	scanf("%d",&num);
+	for(i=0;i<num;i++)
+	{
+		scanf("%d,%d,%d,",&i,&j,&value);
+		matrix[j-1][i-1]=value;
+	}
+	for(i=0;i<10;i++)
+	{
+		for(j=0;j<10;j++)
+		{
+			printf("%d,",matrix[i][j]);
+			if(9==i)
+			{
+			    printf("\n");
+			}
+			
+		}
+	}
+	return 0;
+}

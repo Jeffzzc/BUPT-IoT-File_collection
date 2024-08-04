@@ -1,0 +1,43 @@
+#include<stdio.h>   
+#include<stdlib.h>   
+#include<string.h>                      
+typedef struct  
+{
+       char code;
+       char number[6];   
+}HuffCode;     
+int main() 
+{     
+	HuffCode codenumber[10]={
+				{'a',"1010"},
+				{'b',"00"},
+				{'c',"10000"},
+				{'d',"1001"},
+				{'e',"11"},
+				{'f',"10001"},
+				{'g',"01"},
+				{'h',"1011"}};       
+	char inputStr[100]={},codeStr[100]={},leftStr[100]={};                 
+	gets(inputStr);
+	int leftStrLen=strlen(inputStr),i,j;           
+	while(leftStrLen>0)     
+	{
+	     int found=0;//∆•≈‰≥…π¶
+	     for(i=0;i<5&&found==0;i++)         
+	     {
+	        strncpy(codeStr,str1,i+1);
+	        codeStr[i+1]='\0';            
+	        for(j=0;j<8;j++)             
+	        {                 
+	          if(strcmp(codeStr,codenumber[j].number)==0)                 
+	          {                
+	            	putchar(codenumber[j].code);// ‰≥ˆ        
+	            	found=1;                     
+	            	strncpy(leftStr,&str1[i+1],leftStrLen-i);                     
+			break;                 
+	          }             
+	         }         
+	      }         
+	     leftStrLen=strlen(leftStr);     
+	   } 
+} 

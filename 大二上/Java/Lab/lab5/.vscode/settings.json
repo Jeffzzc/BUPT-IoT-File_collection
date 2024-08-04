@@ -1,7 +1,0 @@
-{
-    "java.debug.settings.onBuildFailureProceed": true,
-    "java.project.sourcePaths": [
-        "q1",
-        "q2"
-    ]
-}
