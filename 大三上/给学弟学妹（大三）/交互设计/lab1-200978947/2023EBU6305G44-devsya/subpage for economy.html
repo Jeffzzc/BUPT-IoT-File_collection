@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--/**-->
+<!-- * @author Wu Tangxun-->
+<!-- * @date 2023/4/6 18:30-->
+<!-- */-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/hobbies.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+        <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Montserrat:700" rel="stylesheet">
+    <!--    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">-->
+        <link rel="stylesheet" href="css/card.css">
+        <link rel="stylesheet" href="css/redraw.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+        <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+        <link href="css/camroll_slider.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- main CSS -->
+        <link href="css/main.css" rel="stylesheet">
+        <!--Data Calendar css -->
+        <link href="css/jquery-ui.css" rel="stylesheet">
+
+        <style>
+            body{
+              background: #494A5F;
+              color: #D5D6E2;
+              font-weight: 500;
+              font-size: 1.05em;
+              font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+            }
+            /*导航悬浮效果*/
+            .bg-gradient {
+            background-image: linear-gradient(to right, rgb(85, 85, 87),80%, rgb(150, 147, 147));
+            }
+            nav div li:hover {
+              background-color: rgb(193, 193, 193);
+            }
+            dropdown-menu {
+                display: none;
+                position: absolute;  
+                background-color: #f9f9f9;  
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }  
+            .dropdown-menu a:hover {  
+            background-color: #f1f1f1  
+            }  
+            .dropdown:hover .dropdown-menu {  
+                display: block;  
+            } 
+            .txtCenter{text-align:center;}
+            .container1 {
+                background-color: rgba(0, 110, 254, 0.096);
+                height: 60vh;
+            }
+    
+            #my-slider {
+            width: 100%;
+            height: 404px;
+            color: white;
+            }
+    
+            @media (max-width: 640px) {
+                #my-slider .crs-bar-roll-current {
+                    width: 38px;
+                    height: 38px;
+                }
+    
+                #my-slider .crs-bar-roll-item {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .cd-intro-content h1,
+            .cd-intro-content p,
+            .cd-intro-content .cd-btn {
+            opacity: 0;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
+            }
+            
+            .bouncy.cd-intro-content h1 {
+            animation-name: cd-bounce-right;
+            }
+            
+            .bouncy.cd-intro-content p {
+            animation-name: cd-bounce-left;
+            }
+            
+            .bouncy.cd-intro-content h1,
+            .bouncy.cd-intro-content p {
+            animation-duration: 0.6s;
+            }
+            
+            .bouncy.cd-intro-content .cd-btn {
+            animation-name: cd-bounce-rotate;
+            animation-duration: 0.5s;
+            }
+            
+            .bouncy.cd-intro-content .cd-btn.main-action {
+            animation-delay: 0.4s;
+            }
+            
+            @keyframes cd-bounce-right {
+                0% {
+                    opacity: .2;
+                    transform: translateX(-200px);
+                }
+                60% {
+                    opacity: .7;
+                    transform: translateX(15px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes cd-bounce-left {
+                0% {
+                    opacity: .2;
+                    transform: translateX(200px);
+                }
+                60% {
+                    opacity: .7;
+                    transform: translateX(-15px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes cd-bounce-rotate {
+                0% {
+                    opacity: .2;
+                    transform: perspective(800px) rotateX(-80deg);
+                }
+                20% {
+                    opacity: 1;
+                }
+                60% {
+                    transform: perspective(800px) rotateX(20deg);
+                }
+                100% {
+                    opacity: 1;
+                    transform: perspective(800px) rotateX(0);
+                }
+                
+            }
+            .hcqStyle2{display:inline-block;font-weight:bold;color:#def;text-shadow:0 0 1px currentColor,-1px -1px 1px #000,0 -1px 1px #000,1px -1px 1px #000,1px 0 1px #000,1px 1px 1px #000,0 1px 1px #000,-1px 1px 1px #000,-1px 0 1px #000;-webkit-filter:url(#diff1);filter:url(#diff1);/*background:#def;padding:0 .2em*/}
+            
+            a:active{color:#ccc;}
+        </style>
+    </head>
+
+    <body>
+        <div class="hobbies">
+            <div class="stars"></div>
+            <!--以下是图片-->
+            <div style="height: 1000px;" id="my-slider" class="crs-wrap rounded shadow my-3">
+                <div class="crs-screen">
+                  <div class="crs-screen-roll">
+                    <div class="crs-screen-item" style="background-image: url('img/ee.jpg')">
+                        <div style="font-size: 80px; color:white; margin-top: 90px;" class="crs-screen-item-content"><strong >Electronic information industry cluster</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/jx.jpg')">
+                      <div style="font-size: 80px; color:white; margin-top: 90px;" class="crs-screen-item-content"><strong >Machinery and equipment industrial cluster</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/sm.jpg')">
+                        <div style="font-size: 80px; color:white; margin-top: 90px;" class="crs-screen-item-content"><strong >Business logistics industrial cluster</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/jr.png')">
+                        <div style="font-size: 80px; color:white; margin-top: 90px;" class="crs-screen-item-content"><strong >Financial service industry cluster</strong></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="height: 70px;" class="crs-bar">
+                  <div style="height: 70px;" class="crs-bar-roll-current"></div>
+                  <div style="height: 70px;" class="crs-bar-roll-wrap">
+                    <div style="height: 70px;" class="crs-bar-roll">
+                      <div class="crs-bar-roll-item" style="background-image: url('img/ee.jpg') ;height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/jx.jpg');height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/sm.jpg');height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/jr.png');height: 60px;"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!--以下是文字-->
+            <div class="jumbotron container1 p-3 shadow mb-3 rounded mx-5 cd-intro-content bouncy " style="height:auto; color:coral; background-color:#666C74;">
+                <h1 style="font-weight:bold;" class="display-4">Xiamen modern industrial system</h1>
+                <p class="lead hcqStyle2" >&nbsp;&nbsp;&nbsp;&nbsp;Municipal Development and Reform Commission will accelerate the construction of the "4+4+6" modern industrial system, strengthen overall planning and coordination, adhere to the city's "one game of chess", guide each district (development zone) to formulate the leading industry plan, forming the urban vertical through the industrial pattern of dislocation development; We will encourage all leading departments to formulate action plans for industrial development, achieve high-quality industrial development, lay a solid foundation for economic development, and contribute to building cities at a higher level and taking the lead in realizing socialist modernization.</p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;4 strategic emerging industries<br>
+
+                    1. Biomedicine. Focus on the development of innovative drugs, medical devices, biomedical services and emerging frontier areas, to create a national strategic emerging industry cluster of biomedicine with domestic influence and a unique industrial innovation centre.<br>
+                    
+                    2. New materials. Focus on the development of optoelectronic information materials, rare earth functional materials, new energy materials, high-performance membrane materials and other fields, to build a national strategic emerging industrial cluster of new functional materials with domestic influence.<br>
+                    
+                    3. New Energy. Focus on the development of new energy batteries, photovoltaic, energy storage, smart grid, energy Internet and other fields, to create a new energy industry cluster of 100 billion yuan scale, and build a highland of innovation and talents in the field of new energy in China.<br>
+                    
+                    4. Cultural tourism and creativity. Focus on the development of film and television, network audiovisual, cultural tourism, creative design, animation and games, artwork, music and other fields, to create a new era of China's film and television centre, the city of network audiovisual industry, fashion and creative arts city.
+                    
+                    </p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;4 pillar industry clusters<br>
+
+                    1. Electronic information industry cluster. Focus on the development of flat-panel displays, computers and communications equipment, semiconductors and integrated circuits and other electronic information manufacturing industries, as well as the Internet of Things, letter creation, artificial intelligence, big data and cloud computing, block chain, meta-universe, industry application software and other software and information services, and strive to build a trillion electronic information industry clusters.<br>
+                    
+                    2. Machinery and equipment industry cluster. Focus on the development of electric power appliances, aviation maintenance and manufacturing, new energy vehicles and high-grade machine tools, precision instruments and other areas of intelligent manufacturing equipment, to create large-scale, intelligent, high-end, integrated industrial clusters.<br>
+                    
+                    3. Commercial trade and logistics industry cluster. Focus on the development of trade in goods, trade in services, conferences and exhibitions and other business services, as well as cold chain logistics, urban and rural distribution, intelligent logistics and green logistics and other modern logistics industry, to create international trade centers, brand exhibitions with international influence, the construction of international shipping center, international exhibition city.<br>
+                    
+                    4. Financial services industry cluster. Focus on the development of financial technology, wealth management, green finance, shipping finance and other modern financial characteristics of the business, to create a financial opening up to the outside world, a demonstration area for the development of the integration of industry and finance, the development of financial technology, the highland of wealth management innovation and special financial brands.<br>
+                    
+                   </p>
+<p class="lead hcqStyle2" >&nbsp;&nbsp;&nbsp;&nbsp; Six Future Industries<br>
+    Third-generation semiconductors, future networks, frontier strategic materials, hydrogen energy and energy storage, genetics and biotechnology, and deep sea, air and space development.</p>
+                <a class="btn bg-gradient mt-3 text-whitek" style="float:right; color: #b6bcb5;" href="economy.html"><—— Return </a>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+            <div class='ribbon'>
+                <a href='homepage.html'><span>Home</span></a>
+                <a href='policy.html'><span>Policy</span></a>
+                <a href='economy.html'><span>Economy</span></a>
+                <a href='culture.html'><span>Culture</span></a>
+                <a href='attractions.html'><span>Attractions</span></a>
+                <a href='./service.html'><span>Service</span></a>
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type='text' id='inp' placeholder="Type in"/>
+                <input class="search-btn" type='button' id='btn' value='search' />
+            </div>
+
+            <div class="container-fluid pt-4 bg-footer" >
+                <div class="row pb-3">
+                    <div class="col">
+                        <ul>
+                            <p class="h2" style="color: white;">Contact US</p>
+                            <p class="h3" style="color: white;"><a href="#" style="color: white;">jp2020213137@qmul.ac.uk</a>| 1234567890</p>
+                            <p class="h2" style="color: white;">Beijing, China</p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row txtCenter mt-5">
+                    <div class="col" id="bottom">
+                        <p class="h5">©2023 Story about Xiamen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function scrolll() {
+                var left = document.querySelector(".scroll-images");
+                left.scrollBy(350, 0)
+            }
+        
+            function scrollr() {
+                var right = document.querySelector(".scroll-images");
+                right.scrollBy(-350, 0)
+            }
+        </script>
+
+        <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="js/camroll_slider.js"></script> 
+        <script>
+            $("#my-slider").camRollSlider();
+        </script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js">!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.οnresize=o,window.οnmοusemοve=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.οnmοuseοut=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();</script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+</html>

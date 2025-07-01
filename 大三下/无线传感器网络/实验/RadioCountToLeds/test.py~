@@ -1,0 +1,129 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Run a TOSSIM *RadioCountToLeds* simulation and compute:
+    • Packet Delivery Ratio (PDR)
+    • Average / min / max one‑hop delay (ms)
+
+### Revision 2025‑06‑22‑e — **Verbose trace option**
+Adds runtime prints that let you see the first few SEND/RECV matches while the
+log is being parsed.  Set `VERBOSE = True` to enable, or keep `False` for the
+clean summary only.
+"""
+from __future__ import print_function, division
+import re, sys, collections
+from TOSSIM import Tossim
+
+TICKS_PER_SEC = 4000000.0       # 4 MHz
+MAX_DELAY_MS  = 500.0           # accept pairs ≤ 500 ms
+MAX_DELAY_TICK = int(MAX_DELAY_MS / 1e3 * TICKS_PER_SEC)
+VERBOSE = True                  # <<< toggle to see pairing details
+
+SEND_RE = re.compile(r"packet sent\.\s+counter=(\d+)\s+time=(\d+)")
+RECV_RE = re.compile(r"received packet\.\s+counter=(\d+)\s+time=(\d+)")
+NODE_RE = re.compile(r"DEBUG \((\d+)\):")
+
+try:
+    from statistics import mean  # Py3
+except Exception:
+    mean = lambda xs: sum(xs)/float(len(xs)) if xs else 0.0
+
+# ---------------------------------------------------------------------------
+# Simulation helpers
+# ---------------------------------------------------------------------------
+
+def setup_sim():
+    tos = Tossim([])
+    radio = tos.radio()
+    with open('topo.txt') as f:
+        for s in (ln.split() for ln in f):
+            if s:
+                radio.add(int(s[0]), int(s[1]), float(s[2]))
+
+    log_f = open('sim.log', 'w')
+    for ch in ('RadioCountToLedsC', 'Boot'):
+        tos.addChannel(ch, log_f)
+
+    vals = [int(l.strip()) for l in open('meyer-heavy.txt') if l.strip()]
+    for nid in (1, 2, 3):
+        n = tos.getNode(nid)
+        for v in vals:
+            n.addNoiseTraceReading(v)
+        n.createNoiseModel()
+
+    tos.getNode(1).bootAtTime(100001)
+    tos.getNode(2).bootAtTime(800008)
+    tos.getNode(3).bootAtTime(1800009)
+    return tos, log_f
+
+def run_sim(tos, ev=50000):
+    for step in range(ev):
+        tos.runNextEvent()
+        if VERBOSE and step % 10000 == 0:
+            print('[SIM] progressed to event', step)
+
+# ---------------------------------------------------------------------------
+# Log analyser
+# ---------------------------------------------------------------------------
+
+SEND_LATEST = {}  # counter → latest send tick
+
+def analyse(path='sim.log'):
+    nodes = set()
+    sends = total_recvs = matched_recvs = 0
+    delays = []
+
+    with open(path) as f:
+        for line in f:
+            m_node = NODE_RE.search(line)
+            if m_node:
+                nodes.add(int(m_node.group(1)))
+
+            m_send = SEND_RE.search(line)
+            if m_send:
+                cnt, tick = map(int, m_send.groups())
+                SEND_LATEST[cnt] = tick   # keep only most recent send per counter
+                sends += 1
+                if VERBOSE and sends <= 5:
+                    print('[TRACE] SEND  counter=%d tick=%d' % (cnt, tick))
+                continue
+
+            m_recv = RECV_RE.search(line)
+            if m_recv:
+                cnt, tick = map(int, m_recv.groups())
+                total_recvs += 1
+                if cnt in SEND_LATEST:
+                    delta = tick - SEND_LATEST[cnt]
+                    if 0 < delta <= MAX_DELAY_TICK:
+                        matched_recvs += 1
+                        delay_ms = delta / TICKS_PER_SEC * 1e3
+                        delays.append(delay_ms)
+                        if VERBOSE and matched_recvs <= 5:
+                            print('[TRACE] RECV  counter=%d tick=%d  → delay %.3f ms' % (cnt, tick, delay_ms))
+
+    n_nodes = max(1, len(nodes))
+    expected = sends * (n_nodes - 1) if n_nodes > 1 else sends
+    pdr = matched_recvs / float(expected) if expected else 0.0
+
+    print('===== SUMMARY =====')
+    print('Nodes discovered         :', sorted(nodes))
+    print('Total packets sent       :', sends)
+    print('Total packets received   :', total_recvs)
+    print('Matched in window ≤{}ms :'.format(MAX_DELAY_MS), matched_recvs)
+    print('Expected receives        :', expected)
+    print('PDR (window‑filtered)    : {:.2%}'.format(pdr))
+
+    if delays:
+        print('Average delay (ms)       : {:.3f}'.format(mean(delays)))
+        print('Min delay (ms)           : {:.3f}'.format(min(delays)))
+        print('Max delay (ms)           : {:.3f}'.format(max(delays)))
+    else:
+        print('No valid send↔recv pairs within window — delay N/A')
+
+# ---------------------------------------------------------------------------
+if __name__ == '__main__':
+    tos, log_f = setup_sim()
+    run_sim(tos)
+    log_f.close()
+    analyse()
+

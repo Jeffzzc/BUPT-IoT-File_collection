@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"datautil"},{"l":"domain"},{"l":"management.domain"},{"l":"management.page"},{"l":"management.report"},{"l":"management.service"},{"l":"management.util"},{"l":"management.worker"},{"l":"pages"},{"l":"service"},{"l":"worker"}]

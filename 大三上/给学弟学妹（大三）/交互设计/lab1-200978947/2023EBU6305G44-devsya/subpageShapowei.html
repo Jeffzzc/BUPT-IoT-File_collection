@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--/**-->
+<!-- * @author Wu Tangxun-->
+<!-- * @date 2023/4/6 18:30-->
+<!-- */-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/hobbies.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+        <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Montserrat:700" rel="stylesheet">
+    <!--    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">-->
+        <link rel="stylesheet" href="css/card.css">
+        <link rel="stylesheet" href="css/redraw.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+        <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+        <link href="css/camroll_slider.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- main CSS -->
+        <link href="css/main.css" rel="stylesheet">
+        <!--Data Calendar css -->
+        <link href="css/jquery-ui.css" rel="stylesheet">
+
+        <style>
+            body{
+              background: #494A5F;
+              color: #D5D6E2;
+              font-weight: 500;
+              font-size: 1.05em;
+              font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+            }
+            /*导航悬浮效果*/
+            .bg-gradient {
+            background-image: linear-gradient(to right, rgb(85, 85, 87),80%, rgb(150, 147, 147));
+            }
+            nav div li:hover {
+              background-color: rgb(193, 193, 193);
+            }
+            dropdown-menu {
+                display: none;
+                position: absolute;  
+                background-color: #f9f9f9;  
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }  
+            .dropdown-menu a:hover {  
+            background-color: #f1f1f1  
+            }  
+            .dropdown:hover .dropdown-menu {  
+                display: block;  
+            } 
+            .txtCenter{text-align:center;}
+            .container1 {
+                background-color: rgba(0, 110, 254, 0.096);
+                height: 60vh;
+            }
+    
+            #my-slider {
+            width: 100%;
+            height: 404px;
+            color: white;
+            }
+    
+            @media (max-width: 640px) {
+                #my-slider .crs-bar-roll-current {
+                    width: 38px;
+                    height: 38px;
+                }
+    
+                #my-slider .crs-bar-roll-item {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .cd-intro-content h1,
+            .cd-intro-content p,
+            .cd-intro-content .cd-btn {
+            opacity: 0;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
+            }
+            
+            .bouncy.cd-intro-content h1 {
+            animation-name: cd-bounce-right;
+            }
+            
+            .bouncy.cd-intro-content p {
+            animation-name: cd-bounce-left;
+            }
+            
+            .bouncy.cd-intro-content h1,
+            .bouncy.cd-intro-content p {
+            animation-duration: 0.6s;
+            }
+            
+            .bouncy.cd-intro-content .cd-btn {
+            animation-name: cd-bounce-rotate;
+            animation-duration: 0.5s;
+            }
+            
+            .bouncy.cd-intro-content .cd-btn.main-action {
+            animation-delay: 0.4s;
+            }
+            
+            @keyframes cd-bounce-right {
+                0% {
+                    opacity: .2;
+                    transform: translateX(-200px);
+                }
+                60% {
+                    opacity: .7;
+                    transform: translateX(15px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes cd-bounce-left {
+                0% {
+                    opacity: .2;
+                    transform: translateX(200px);
+                }
+                60% {
+                    opacity: .7;
+                    transform: translateX(-15px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes cd-bounce-rotate {
+                0% {
+                    opacity: .2;
+                    transform: perspective(800px) rotateX(-80deg);
+                }
+                20% {
+                    opacity: 1;
+                }
+                60% {
+                    transform: perspective(800px) rotateX(20deg);
+                }
+                100% {
+                    opacity: 1;
+                    transform: perspective(800px) rotateX(0);
+                }
+                
+            }
+            .hcqStyle2{display:inline-block;font-weight:bold;color:#def;text-shadow:0 0 1px currentColor,-1px -1px 1px #000,0 -1px 1px #000,1px -1px 1px #000,1px 0 1px #000,1px 1px 1px #000,0 1px 1px #000,-1px 1px 1px #000,-1px 0 1px #000;-webkit-filter:url(#diff1);filter:url(#diff1);/*background:#def;padding:0 .2em*/}
+            
+            a:active{color:#ccc;}
+        </style>
+    </head>
+
+    <body>
+        <div class="hobbies">
+            <div class="stars"></div>
+            <img class="icon7" style=" z-index: 9999;" src="img/Icon_noback.jpg" alt="icon" />
+            <!--以下是图片-->
+            <div style="height: 900px; margin-top: 0px!important;" id="my-slider" class="crs-wrap rounded shadow my-3">
+                <div class="crs-screen">
+                  <div class="crs-screen-roll">
+                    <div class="crs-screen-item" style="background-image: url('img/shapowei1.jpg')">
+                        <div style="font-size: 70px; color: coral; margin-top: 90px;" class="crs-screen-item-content"><strong style="background:#b6bcb5">Shapowei, A Sightseeing place</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/shapowei2.jpg')">
+                      <div style="font-size: 70px; color: coral; margin-top: 90px;" class="crs-screen-item-content"><strong style="background:#b6bcb5">Used to be a harbour</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/shapowei3.jpg')">
+                        <div style="font-size: 70px; color: coral; margin-top: 90px;" class="crs-screen-item-content"><strong style="background:#b6bcb5">Stores in Shapowei</strong></div>
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('img/shapowei4.jpg')">
+                        <div style="font-size: 70px; color: coral; margin-top: 90px;" class="crs-screen-item-content"><strong style="background:#b6bcb5">Shapowei Art Zone</strong></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="height: 70px;" class="crs-bar">
+                  <div style="height: 70px;" class="crs-bar-roll-current"></div>
+                  <div style="height: 70px;" class="crs-bar-roll-wrap">
+                    <div style="height: 70px;" class="crs-bar-roll">
+                      <div class="crs-bar-roll-item" style="background-image: url('img/shapowei1.jpg') ;height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/shapowei2.jpg');height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/shapowei3.jpg');height: 60px;"></div>
+                      <div class="crs-bar-roll-item" style="background-image: url('img/shapowei4.jpg');height: 60px;"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!--以下是文字-->
+            <div class="jumbotron container1 p-3 shadow mb-3 rounded mx-5 cd-intro-content bouncy " style="height:auto; color:coral; background-color:#666C74;">
+                <h1 style="font-weight:bold;" class="display-4">Shapowei Zone - Experience the Real Xiamen</h1>
+                <p class="lead hcqStyle2" >&nbsp;&nbsp;&nbsp;&nbsp;Xiamen is a city on the rise. What has been a popular tourist attraction for locals is now becoming popular among the expat crowd. If you are thinking of coming to Xiamen, there will be many exciting things to do, foods to eat, and sights to see. However, if you want to enjoy some of the genuine local culture, there is no place better than Shapowei.</p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;At the heart of Shapowei's local culture is the Shapowei Art Zone. Every weekend, local artists come here to sell their wares. One can also grab a slice of pizza and a cold beverage while admiring the local street art and checking out the skaters performing tricks at the skate park.</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Address: Shapowei Art Zone, 60 Daxue Road (厦门沙坡尾艺术西区60号之13设备房).</p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Down the road from the art zone, hidden away from the crowds, is Thank You Cafe. Thank You Cafe is a combination coffee house and specialty drink bar with a jazz club feel. Coming to this cafe, one can enjoy the best handmade drink in Xiamen. No mojitos from a shaker here. On the second floor, light dishes are made fresh and served daily, and at night you will hear eclectic music ranging from Jazz to hip hop coming from the turntables. In keeping with the feel of the cafe, there is no sign or obvious entrance outside so make sure to give the driver the address.</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Address: Shop 8-9, 162 Daxue Road, Siming District, Xiamen, Fujian (厦门市思明区大学路162号8-9店面).</p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;If you are feeling peckish and desire something light and sweet to eat, there is only one place to go: Duoji Doughnuts. Owned by a local artist, Douji offers an array of unique flavors and aesthetically pleasing treats. Stop in and see why these small sweet treats are a favorite among locals.</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Address: 113 Daxue Road, Siming District, Xiamen (厦门市思明区大学路113号).</b></p>
+                <hr class="my-4">
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Best Time: March ~ May and September ~ October</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Recommended Visiting Hours: 1 ~ 2 days</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Open Hours: All day</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Tickets: The zone is free, however, some of the attractions on the zone have entrance ticket. See detailed information below</p>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;Address: Shapowei Art Zone, 60 Daxue Road, Xiamen 361002, China</p>
+                <hr class="my-4">
+                <a class="btn bg-gradient mt-3 text-whitek" style="float:right; color: #b6bcb5;" href="attractions.html"><—— Return </a>
+                <p class="lead hcqStyle2">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+
+            <div class='ribbon'>
+                <a href='./homepage.html'><span>Home</span></a>
+                <a href='./policy.html'><span>Policy</span></a>
+                <a href='./economy.html'><span>Economy</span></a>
+                <a href='./culture.html'><span>Culture</span></a>
+                <a href='./attractions.html'><span>Attractions</span></a>
+                <a href='./service.html'><span>Service</span></a>
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type='text' id='inp' placeholder="Type in"/>
+                <input class="search-btn" type='button' id='btn' value='search' />
+            </div>
+
+            <div class="container-fluid pt-4 bg-footer" >
+                <div class="row pb-3">
+                    <div class="col">
+                        <ul>
+                            <p class="h2" style="color: white;">Contact US</p>
+                            <p class="h3" style="color: white;"><a href="#" style="color: white;">jp2020213137@qmul.ac.uk</a>| 1234567890</p>
+                            <p class="h2" style="color: white;">Beijing, China</p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row txtCenter mt-5">
+                    <div class="col" id="bottom">
+                        <p class="h5">©2023 Story about Xiamen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function scrolll() {
+                var left = document.querySelector(".scroll-images");
+                left.scrollBy(350, 0)
+            }
+        
+            function scrollr() {
+                var right = document.querySelector(".scroll-images");
+                right.scrollBy(-350, 0)
+            }
+        </script>
+
+        <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="js/camroll_slider.js"></script> 
+        <script>
+            $("#my-slider").camRollSlider();
+        </script>
+        <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js">!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.οnresize=o,window.οnmοusemοve=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.οnmοuseοut=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();</script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </body>
+</html>

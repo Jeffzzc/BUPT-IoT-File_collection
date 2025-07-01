@@ -1,0 +1,1 @@
+{"Bintang":1.0,"Xiangcong":1.0,"Egg":1.0,"Ramen":9.99,"Chashu":2.0,"Shoots":1.0,"Nori":1.0}

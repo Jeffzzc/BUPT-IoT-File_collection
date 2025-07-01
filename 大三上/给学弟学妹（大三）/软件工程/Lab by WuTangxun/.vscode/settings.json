@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "E:\\hamcrest-core-1.3.jar",
+            "E:\\junit-4.12.jar"
+        ],
+    }
+}

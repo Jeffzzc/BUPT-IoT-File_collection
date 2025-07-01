@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+    .Main{
+        height: 760px;
+		width: 560px;
+		border: 3px solid green;
+		padding: 17px;
+		margin: 0;
+    }
+
+    .setup{
+		border: 20px solid rgb(111, 137, 111);
+		height: 90px;
+		width: 500px;
+		display: inline-block;
+		font-size: 11pt;
+		font-weight: bold;
+		line-height: 0;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+
+    .operator{
+		border: 0.3px solid green;
+		height: 80px;
+		width: 246px;
+		margin: 1.4px;
+	}
+
+    .operator button{
+		height: 48px;
+		width: 48px;
+	}
+
+    .levelValue{
+		border: 0.3px solid green;
+		height: 80px;
+		width: 246px;
+		margin: 1.4px;
+	}
+
+	 #level{
+		position: relative;
+		top: 15px;
+	 }
+	
+
+    .TopBar{
+        height: 100px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 30pt;
+		font-weight: bold;
+		color: orange;
+    }
+
+    .Quiz{
+        height: 120px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 35pt;
+		font-weight: bold;
+		color: blue;
+    }
+
+    button{  /* on the Play class */
+		height: 100px;
+		width: 100px;
+		border: none;
+	}
+
+    button:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+
+	button:focus{
+		outline:none;
+	}
+ </style>
+</head>
+<body>
+    <div class="Main">
+        <div class="setup">
+            <div class="operator">
+                <p>Select Game:</p>
+				<button onclick="changeMode(this.id)" id="+" style="background: url(images/math_add.png); background-size: contain;"></button>
+				<button onclick="changeMode(this.id)" id="-" style="background: url(images/math_subtraction.png); background-size: contain;"></button>
+				<button onclick="changeMode(this.id)" id="x" style="background: url(images/math_multiply.png); background-size: contain;"></button>
+				<button onclick="changeMode(this.id)" id="/" style="background: url(images/math_division.png); background-size: contain;"></button>
+            </div>    
+            <div class="levelValue">
+				<p>Select Level:</p>
+				<input type="range" min="1" max="5" value="1" step="1" id="slider"><br>
+				<span id="level" style="font-size: 20px;"></span>
+			</div>
+        </div>
+        <div class="TopBar" id = "message">
+            Quiz Starts!
+        </div>
+        <div class="Quiz" id = "quiz">
+            3 + 2 = ?
+        </div>
+
+        <script>
+        slider = document.getElementById("slider");
+		document.getElementById("level").innerHTML = slider.value;
+        var userInput = "";
+        var left;
+        var right;
+        var mode="+";
+        new_Quiz();
+        
+        function buttonPressed(buttonID){
+		    userInput = userInput + buttonID;
+			document.getElementById("quiz").innerHTML = left + " " + mode + " " + right + " =  " + "<span style='color: gray;'>" + userInput + "</span>";
+        }
+
+		function checkAnswer(){
+			var result;
+            switch(mode) {
+			case "-":
+				result = left - right;
+				break;
+			case "x":
+				result = left * right;
+				break;
+			case "/":
+				result = Math.trunc(left / right);
+				break;
+			default:
+				result = left + right;
+			}
+			if(userInput != ""){
+				if(result.toString() == userInput){
+					document.getElementById("message").innerHTML = "<span style='color: green;'>Well done!</span>";
+					new_Quiz();
+				}
+				else{
+					document.getElementById("message").innerHTML = "<span style='color: red;'>Sorrry! Wrong!</span>";
+				}
+			}
+			else{
+				document.getElementById("message").innerHTML = "<span style='color: Pink;'>Come on! Give a try!</span>";
+			}
+			userInput = "";
+		}
+
+        function new_Quiz(){
+            var max = 5 * slider.value;
+			var min = 1 + 5 * (slider.value-1);
+			left = Math.floor(Math.random() * (max - min + 1)) + min;
+			right = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("quiz").innerHTML = left + " " + mode + " " + right + " =  ?";
+        }
+
+        slider.oninput = function(){
+			document.getElementById("level").innerHTML = this.value;
+		}
+
+        function changeMode(modeID){
+            mode = modeID;
+            new_Quiz();
+        }
+
+        </script>
+
+        <div class="Play">
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="1" style="background: url(images/number1.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="2" style="background: url(images/number2.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="3" style="background: url(images/number3.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="4" style="background: url(images/number4.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="5" style="background: url(images/number5.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="6" style="background: url(images/number6.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="7" style="background: url(images/number7.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="8" style="background: url(images/number8.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="9" style="background: url(images/number9.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="0" style="background: url(images/number0.png); background-size: contain;"></button>
+                <button onclick="checkAnswer()" id="enter" style="background: url(images/enter.png); background-size: contain;"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

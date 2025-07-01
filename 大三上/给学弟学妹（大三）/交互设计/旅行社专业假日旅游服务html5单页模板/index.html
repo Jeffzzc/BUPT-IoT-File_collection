@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ThemesLay">
+    <!-- Favicon icon -->
+    
+
+    <!-- main CSS -->
+    <link href="static/css/main.css" rel="stylesheet">
+    <!--Data Calendar css -->
+    <link href="static/css/jquery-ui.css" rel="stylesheet">
+    <!--Data Calendar css -->
+    <title>Holiday World - Travel Agency HTML5 Landing Page</title>
+</head>
+
+<body>
+    <!-- preloader section -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+    </div>
+    <!-- page wrapper section -->
+    <div id="wrapper"></div>
+    <!-- Header Part -->
+    <header>
+        <!-- menu Part -->
+        <div class="navbar navbar-expand-lg py-lg-0 py-2 px-0 theme-box-shadow header" id="nav">
+            <nav class="container">
+                <a class="navbar-brand py-0 m-0" href="#">
+                    <img src="static/picture/brand.svg" class="img-fluid" alt="Brand Logo" title="Brand Logo">
+                </a>
+                <div class="btn-wrapper ms-auto">
+                    <button class="navbar-toggler theme-bg-secondary border-0 menu-toggle" type="button" data-label="Menu" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bars"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" aria-current="page" href="#home" onclick="window.location.href='#home';">Home</a>
+                        </li>
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" href="#about" onclick="window.location.href='#about';">About</a>
+                        </li>
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" href="#tours" onclick="window.location.href='#tours';">Tours</a>
+                        </li>
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" href="#whyus" onclick="window.location.href='#whyUs';">Why Us</a>
+                        </li>
+                        <li class="nav-item nav-effect ">
+                            <a class="nav-link" href="#hero" onclick="window.location.href='#hero';">Plan</a>
+                        </li>
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" href="#blog" onclick="window.location.href='#blogs';">Blog</a>
+                        </li>
+                        <li class="nav-item nav-effect">
+                            <a class="nav-link" href="#contact" onclick="window.location.href='#contact';">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-2 justify-content-center">
+                        <button onclick="window.location.href='#contact';" class="btn custom-btn-primary font-small fw-bold button-effect" type="submit">Book
+                            a Tour</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Body Part - hero section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center py-8">
+                <div class="col-12 col-xl-6 position-relative" id="hero">
+                    <h1 class="display-2 fw-bold mb-4 theme-text-secondary theme-text-shadow pe-lg-5">Plan &
+                        <span class="high-text">explore</span>
+                        new world
+                    </h1>
+                    <p class="mb-0 theme-text-accent-one theme-text-shadow mb-5">TrovalAgency partner with a
+                        team
+                        that has the experience and drive to help you become a travel leader.</p>
+                    <!-- search engine -->
+                    <div class="theme-box-shadow theme-border-radius p-3 theme-bg-white">
+                        <form class="row g-2 align-self-center">
+                            <div class="col-12 col-md-4">
+                                <label for="inputCity" class="form-label mb-0 fw-bold">Location</label>
+                                <i class="bi bi-chevron-down theme-text-primary ps-2"></i>
+                                <input type="text" class="form-control border-0 ps-0 font-small" id="inputCity" placeholder="Enter your destinations">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <label for="datepicker" class="form-label mb-0 fw-bold">Date</label>
+                                <i class="bi bi-chevron-down theme-text-primary ps-2"></i>
+                                <input type="text" class="form-control border-0 ps-0 font-small cal-input" id="datepicker" placeholder="Enter Dates">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label for="inputState" class="form-label mb-0 fw-bold">People</label>
+                                <i class="bi bi-chevron-down theme-text-primary ps-2"></i>
+                                <select id="inputState" class="form-select border-0 font-small">
+                                    <option selected="">How many people</option>
+                                    <option>Couples</option>
+                                    <option>Family</option>
+                                    <option>Group of 5</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <button type="submit" class="btn custom-btn-secondary button-effect-sec font-small fw-bold button-effect h-100">
+                                    <span class="d-none d-lg-blcok">Explore Now</span>
+                                    <i class="bi bi-search fs-4"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="my-5">
+                        <span class="fw-bold">Popular Tours:</span>
+                        <ul class="d-flex flex-wrap">
+                            <li><a href="#" class="theme-text-accent-one me-2">Istanbul</a></li>
+                            <li><a href="#" class="theme-text-accent-one me-2">San Francisco</a></li>
+                            <li><a href="#" class="theme-text-accent-one me-2">Parish</a></li>
+                            <li><a href="#" class="theme-text-accent-one me-2">Bali</a></li>
+                            <li><a href="#" class="theme-text-accent-one me-2">Pataya</a></li>
+                            <li><a href="#" class="theme-text-accent-one me-2">Istanbul</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- banner card section -->
+                <div class="col-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex flex-column theme-box-shadow theme-border-radius mb-3 animate-fly">
+                                <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                    <figure class="mb-0 img-effect">
+                                        <img src="static/picture/deals01.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                    </figure>
+                                </div>
+                                <a href="#" class="position-relative py-3 px-3 mb-0 theme-border-radius-bottom card-effect theme-bg-white">
+                                    <span class="fs-5 mb-0 pb-2 theme-text-accent-one">TrovalAgency #
+                                        Discover around a world</span>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="d-flex font-small theme-text-primary">MadeBy:the_slay
+                                            </span>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <img src="static/picture/icon-hero-card01.png" alt="avatar" class="rounded-pill">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-column theme-box-shadow theme-border-radius mb-3 item2 mx-auto animate-fly">
+                                <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                    <figure class="mb-0 img-effect">
+                                        <img src="static/picture/deals02.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                    </figure>
+                                </div>
+                                <a href="#" class="position-relative py-3 px-3 mb-0 theme-border-radius-bottom card-effect theme-bg-white">
+                                    <span class="fs-5 mb-0 pb-2 theme-text-accent-one">FlightBooking #
+                                        partner with a
+                                        team</span>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="d-flex font-small theme-text-primary">MadeBy:the_slay
+                                            </span>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <img src="static/picture/icon-hero-card02.png" alt="avatar" class="rounded-pill">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- repetable -->
+                        <div class="col-12 col-md-6 align-self-center">
+                            <div class="d-flex flex-column theme-box-shadow theme-border-radius mb-3 item3 animate-fly">
+                                <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                    <figure class="mb-0 img-effect">
+                                        <img src="static/picture/deals03.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                    </figure>
+                                </div>
+                                <a href="#" class="position-relative py-3 px-3 mb-0 theme-border-radius-bottom card-effect theme-bg-white">
+                                    <span class="fs-5 mb-0 pb-2 theme-text-accent-one">HotelsBooking #
+                                        partner with a
+                                        team</span>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1">
+                                            <span class="d-flex font-small theme-text-primary">MadeBy:the_slay
+                                            </span>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <img src="static/picture/icon-hero-card03.png" alt="avatar" class="rounded-pill">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Promotion banner section -->
+    <section class="promo-ban py-5" id="tours">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <h2 class="display-4 text-center theme-text-secondary fw-bold mb-3"><span class="high-text">Exploring</span> the World in <br>
+                        Comfort with Travel
+                    </h2>
+                    <p class="text-center theme-text-accent-one mb-0">Discuss your goals determines success
+                        metrics identity solution Discuss your goals
+                    </p>
+                </div>
+            </div>
+            <!-- promotional Slider -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme" id="carouselPromo">
+                        <!-- repetable element -->
+                        <div class="wrap">
+                            <div class="item">
+                                <a href="#" class="d-block promo">
+                                    <img src="static/picture/promo-banner01.png" class="img-fluid" alt="banner">
+                                    <div class="w-100">
+                                        <p class="font-small text-center promo-hover">
+                                            <span class="rounded-circle d-inline-block more-circle"><i class="bi bi-arrow-right-short"></i></span>
+                                            <span class="d-flex fs-4 ms-3">Know More</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="my-3 main-text">01</h3>
+                            <p class="mb-0">Crimea, Ukraine</p>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="wrap">
+                            <div class="item">
+                                <a href="#" class="d-block promo">
+                                    <img src="static/picture/promo-banner02.png" class="img-fluid" alt="banner">
+                                    <div class="w-100">
+                                        <p class="font-small text-center promo-hover">
+                                            <span class="rounded-circle d-inline-block more-circle"><i class="bi bi-arrow-right-short"></i></span>
+                                            <span class="d-flex fs-4 ms-3">Know More</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="my-3 main-text">02</h3>
+                            <p class="mb-0">Crimea, Ukraine</p>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="wrap">
+                            <div class="item">
+                                <a href="#" class="d-block promo">
+                                    <img src="static/picture/promo-banner03.png" class="img-fluid" alt="banner">
+                                    <div class="w-100">
+                                        <p class="font-small text-center promo-hover">
+                                            <span class="rounded-circle d-inline-block more-circle"><i class="bi bi-arrow-right-short"></i></span>
+                                            <span class="d-flex fs-4 ms-3">Know More</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="my-3 main-text">03</h3>
+                            <p class="mb-0">Crimea, Ukraine</p>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="wrap">
+                            <div class="item">
+                                <a href="#" class="d-block promo">
+                                    <img src="static/picture/promo-banner04.png" class="img-fluid" alt="banner">
+                                    <div class="w-100">
+                                        <p class="font-small text-center promo-hover">
+                                            <span class="rounded-circle d-inline-block more-circle"><i class="bi bi-arrow-right-short"></i></span>
+                                            <span class="d-flex fs-4 ms-3">Know More</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="my-3 main-text">04</h3>
+                            <p class="mb-0">Crimea, Ukraine</p>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="wrap">
+                            <div class="item">
+                                <a href="#" class="d-block promo">
+                                    <img src="static/picture/promo-banner05.png" class="img-fluid" alt="banner">
+                                    <div class="w-100">
+                                        <p class="font-small text-center promo-hover">
+                                            <span class="rounded-circle d-inline-block more-circle"><i class="bi bi-arrow-right-short"></i></span>
+                                            <span class="d-flex fs-4 ms-3">Know More</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <h3 class="my-3 main-text">05</h3>
+                            <p class="mb-0">Crimea, Ukraine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- special offers -->
+    <section class="special-deal pb-5" id="featuredFlights">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12 col-lg-6">
+                    <h4 class="display-4 theme-text-secondary fw-bold mb-3">Special <span class="high-text">Offers</span></h4>
+                    <p class="theme-text-accent-one mb-0">Discuss your goals determines success metrics identity
+                        solution Discuss your goals
+                        determines success metrics identity solution Discuss your goals </p>
+                </div>
+            </div>
+            <!-- promotional Slider -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme" id="carouselOffer">
+                        <!-- repetable element -->
+                        <div class="item">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex flex-column">
+                                    <div class="head">
+                                        <span class="d-inline-flex location"><i class="bi bi-airplane"></i></span>
+                                        <span class="d-inline-flex pb-2 font-small theme-text-accent-one">France
+                                            States
+                                        </span>
+                                    </div>
+                                    <span class="mb-0 pb-2 theme-text-secondary">The Grand Palace, Las
+                                        Vegas</span>
+                                    <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                        <figure class="mb-0 img-effect">
+                                            <img src="static/picture/deals01.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                        </figure>
+                                        <div class="airline-tags position-absolute">
+                                            <div class="flood-effect airline-icon">
+                                                <a href="#" class="font-small px-2">30% Off</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between position-relative py-3 mb-0">
+                                        <span class="wrap">
+                                            <span class="d-flex theme-text-accent-one">
+                                                <span class="fw-bold price theme-text-secondary">
+                                                    <i class="bi bi-currency-dollar"></i> 1299.00</span>
+                                            </span>
+                                            <span class="text-yellow">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </span>
+                                        <button type="submit" class="btn custom-btn-primary font-small fw-bold button-effect">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="item">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex flex-column">
+                                    <div class="head">
+                                        <span class="d-inline-flex location"><i class="bi bi-geo-alt"></i></span>
+                                        <span class="d-inline-flex pb-2 font-small theme-text-accent-one">United
+                                            States
+                                        </span>
+                                    </div>
+                                    <span class="mb-0 pb-2 theme-text-secondary">The Grand Palace, Las
+                                        Vegas</span>
+                                    <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                        <figure class="mb-0 img-effect">
+                                            <img src="static/picture/deals02.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                        </figure>
+                                        <div class="airline-tags position-absolute">
+                                            <div class="flood-effect airline-icon">
+                                                <a href="#" class="font-small px-2">30% Off</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between position-relative py-3 mb-0">
+                                        <span class="wrap">
+                                            <span class="d-flex theme-text-accent-one">
+                                                <span class="fw-bold price theme-text-secondary">
+                                                    <i class="bi bi-currency-dollar"></i> 1299.00</span>
+                                            </span>
+                                            <span class="text-yellow">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </span>
+                                        <button type="submit" class="btn custom-btn-primary font-small fw-bold button-effect">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="item">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex flex-column">
+                                    <div class="head">
+                                        <span class="d-inline-flex location"><i class="bi bi-pin-map"></i></span>
+                                        <span class="d-inline-flex pb-2 font-small theme-text-accent-one">United
+                                            States
+                                        </span>
+                                    </div>
+                                    <span class="mb-0 pb-2 theme-text-secondary">The Grand Palace, Las
+                                        Vegas</span>
+                                    <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                        <figure class="mb-0 img-effect">
+                                            <img src="static/picture/deals03.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                        </figure>
+                                        <div class="airline-tags position-absolute">
+                                            <div class="flood-effect airline-icon">
+                                                <a href="#" class="font-small px-2">30% Off</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between position-relative py-3 mb-0">
+                                        <span class="wrap">
+                                            <span class="d-flex theme-text-accent-one">
+                                                <span class="fw-bold price theme-text-secondary">
+                                                    <i class="bi bi-currency-dollar"></i> 1299.00</span>
+                                            </span>
+                                            <span class="text-yellow">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </span>
+                                        <button type="submit" class="btn custom-btn-primary font-small fw-bold button-effect">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- repetable element -->
+                        <div class="item">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex flex-column">
+                                    <div class="head">
+                                        <span class="d-inline-flex location"><i class="bi bi-geo-alt"></i></span>
+                                        <span class="d-inline-flex pb-2 font-small theme-text-accent-one">United
+                                            States
+                                        </span>
+                                    </div>
+                                    <span class="mb-0 pb-2 theme-text-secondary">The Grand Palace, Las
+                                        Vegas</span>
+                                    <div class="picHeight overflow-hidden hoverShine theme-border-radius-top">
+                                        <figure class="mb-0 img-effect">
+                                            <img src="static/picture/deals04.png" class="img-fluid" alt="Deals One" title="Deals One">
+                                        </figure>
+                                        <div class="airline-tags position-absolute">
+                                            <div class="flood-effect airline-icon">
+                                                <a href="#" class="font-small px-2">30% Off</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between position-relative py-3 mb-0">
+                                        <span class="wrap">
+                                            <span class="d-flex theme-text-accent-one">
+                                                <span class="fw-bold price theme-text-secondary">
+                                                    <i class="bi bi-currency-dollar"></i> 1299.00</span>
+                                            </span>
+                                            <span class="text-yellow">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </span>
+                                        <button type="submit" class="btn custom-btn-primary font-small fw-bold button-effect">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- wonderful experience -->
+    <section class="experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrap">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 position-relative align-self-center">
+                                <h4 class="display-4 theme-text-white mb-0 fw-bold">Wonderful Travel
+                                    Experiences with<br>
+                                    Travel Agency</h4>
+                                <p class="fs-6 theme-text-white my-3">Discuss your goals determines success metrics
+                                    identity solution <br>Discuss your goals Discuss your goals determines success</p>
+                            </div>
+                            <div class="col-12 col-lg-6 position-relative">
+                                <div class="group custom-button">
+                                    <div class="d-flex align-items-center">
+                                        <a href="javascript:;" class="video-icon video-icon2 mr-30 ml-20 video_model">
+                                            <i class="bi bi-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why travel with us -->
+    <section class="py-5 theme-bg-white" id="whyUs">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12 text-center">
+                    <h3 class="display-4 fw-bold theme-text-secondary mb-3">Why <span class="high-text">Travel</span>
+                        Agency</h3>
+                    <p class="font-small theme-text-accent-one mb-0">Discuss your goals determines success
+                        metrics identity solution
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <span class=" center-line"></span>
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="text-center feature-card">
+                        <span class="d-flex circle">
+                            <img src="static/picture/best-services.svg" class="img-fluid" alt="Best Services">
+                        </span>
+                        <h3 class="fs-2 pt-5 pb-4 mb-0"><span class="timer" data-from="0" data-to="100" data-speed="4000">100</span>+ Places</h3>
+                        <p class="mb-3 theme-text-accent-one font-small px-5">We have access and official permission
+                            over 100 plus awsome travlling places in the world</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="text-center feature-card">
+                        <span class="d-flex circle">
+                            <img src="static/picture/amazing-deals.svg" class="img-fluid" alt="Amazing Deals">
+                        </span>
+                        <h3 class="fs-2 pt-5 pb-4 mb-0"><span class="timer" data-from="0" data-to="90" data-speed="4000"></span>+ Tour Guide</h3>
+                        <p class="mb-3 theme-text-accent-one font-small px-5">We have access and official permission
+                            over 100 plus awsome travlling places in the world</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-4 mb-lg-0">
+                    <div class="text-center feature-card">
+                        <span class="d-flex circle">
+                            <img src="static/picture/affordable-pricing.svg" class="img-fluid" alt="Affordable Pricing">
+                        </span>
+                        <h3 class="fs-2 pt-5 pb-4 mb-0"><span class="timer" data-from="0" data-to="200000" data-speed="4000"></span>+ Customers</h3>
+                        <p class="mb-3 theme-text-accent-one font-small px-5">We have access and official permission
+                            over 100 plus awsome travlling places in the world</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about company section -->
+    <section class="about-company py-5 mt-lg-7" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="about-pic mt-lg-5">
+                        <figure class="mb-0 position-relative about-img">
+                            <img src="static/picture/about-us01.png" class="img-fluid" alt="about company">
+                            <img src="static/picture/about-us02.png" class="img-fluid" alt="about company">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="py-2 px-5 mt-5 mt-lg-0">
+                        <h4 class="display-4 fw-bold theme-text-secondary mb-3">Best
+                            <span class="high-text">Travel</span> Agency
+                        </h4>
+                        <p class="mb-5 mt-5 theme-text-accent-one lh-lg">Bringing you a modern, comfortable, and
+                            connected travel experience is one of our highest priorities and that’s why we continuously
+                            try to improve your experience when you book anything with us.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <span class="px-3 py-3 rounded-circle theme-box-shadow h4 fw-bold d-inline-flex">
+                                    <i class="bi bi-check2-circle display-6 theme-text-primary lh-1"></i>
+                                </span>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <p class="fw-bold mb-3">Unique Design</p>
+                                <p class="theme-text-accent-one mb-0 pe-5">Design a beautiful work of art that
+                                    matches your exact specifications</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-5">
+                            <button onclick="window.location.href='#contact';" class="btn custom-btn-primary font-small fw-bold button-effect" type="submit">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our blogs/news section  -->
+    <section class="news py-5" id="blogs">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12 text-center">
+                    <h3 class="display-4 fw-bold theme-text-secondary mb-3">Our <span class="high-text">Best</span>
+                        Blogs</h3>
+                    <p class="font-small theme-text-accent-one mb-0">An insight to the incredible experience in the
+                        world
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="news-card row g-0">
+                        <div class="col-12 col-lg-6">
+                            <div class="theme-box-shadow theme-border-radius overflow-hidden position-relative">
+                                <figure class="mb-0 img-effect">
+                                    <img src="static/picture/blog-post01.jpg" class="img-fluid" alt="news articles">
+                                </figure>
+                                <div class="tags position-absolute">
+                                    <div class="flood-effect">
+                                        <a href="javascript:void(0)" class="font-small"><i class="bi bi-calendar4-week me-2"></i>18 March 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 p-lg-2 p-xl-4 col-12 col-lg-6">
+                            <h2 class="fs-5 fw-bold mb-3">Beautiful Frence, Let's
+                                Travelling!</h2>
+                            <p class="theme-text-accent-one mb-3">Frence in one of the most popular vacation destination
+                                in the world, and it's no wonder.</p>
+                            <div class="d-flex">
+                                <a href="javascript:void(0)" class="btn theme-border theme-border-radius font-small fw-bold button-effect">Read
+                                    more<i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="news-card row g-0">
+                        <div class="col-12 col-lg-6">
+                            <div class="theme-box-shadow theme-border-radius overflow-hidden position-relative">
+                                <figure class="mb-0 img-effect">
+                                    <img src="static/picture/blog-post02.jpg" class="img-fluid" alt="news articles">
+                                </figure>
+                                <div class="tags position-absolute">
+                                    <div class="flood-effect">
+                                        <a href="javascript:void(0)" class="font-small"><i class="bi bi-calendar4-week me-2"></i>18 March 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 p-lg-2 p-xl-4 col-12 col-lg-6">
+                            <h2 class="fs-5 fw-bold mb-3">Beautiful Frence, Let's
+                                Travelling!</h2>
+                            <p class="theme-text-accent-one mb-3">Frence in one of the most popular vacation destination
+                                in the world, and it's no wonder.</p>
+                            <div class="d-flex">
+                                <a href="javascript:void(0)" class="btn theme-border theme-border-radius font-small fw-bold button-effect">Read
+                                    more<i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="news-card row g-0">
+                        <div class="col-12 col-lg-6">
+                            <div class="theme-box-shadow theme-border-radius overflow-hidden position-relative">
+                                <figure class="mb-0 img-effect">
+                                    <img src="static/picture/blog-post03.jpg" class="img-fluid" alt="news articles">
+                                </figure>
+                                <div class="tags position-absolute">
+                                    <div class="flood-effect">
+                                        <a href="javascript:void(0)" class="font-small"><i class="bi bi-calendar4-week me-2"></i>18 March 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 p-lg-2 p-xl-4 col-12 col-lg-6">
+                            <h2 class="fs-5 fw-bold mb-3">Beautiful Frence, Let's
+                                Travelling!</h2>
+                            <p class="theme-text-accent-one mb-3">Frence in one of the most popular vacation destination
+                                in the world, and it's no wonder.</p>
+                            <div class="d-flex">
+                                <a href="javascript:void(0)" class="btn theme-border theme-border-radius font-small fw-bold button-effect">Read
+                                    more<i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="news-card row g-0">
+                        <div class="col-12 col-lg-6">
+                            <div class="theme-box-shadow theme-border-radius overflow-hidden position-relative">
+                                <figure class="mb-0 img-effect">
+                                    <img src="static/picture/blog-post04.jpg" class="img-fluid" alt="news articles">
+                                </figure>
+                                <div class="tags position-absolute">
+                                    <div class="flood-effect">
+                                        <a href="javascript:void(0)" class="font-small"><i class="bi bi-calendar4-week me-2"></i>18 March 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 p-lg-2 p-xl-4 col-12 col-lg-6">
+                            <h2 class="fs-5 fw-bold mb-3">Beautiful Frence, Let's
+                                Travelling!</h2>
+                            <p class="theme-text-accent-one mb-3">Frence in one of the most popular vacation destination
+                                in the world, and it's no wonder.</p>
+                            <div class="d-flex">
+                                <a href="javascript:void(0)" class="btn theme-border theme-border-radius font-small fw-bold button-effect">Read
+                                    more<i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+            </div>
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <div class="d-flex justify-content-center">
+                        <button onclick="window.location.href='#contact';" class="btn custom-btn-primary font-small fw-bold button-effect" type="submit">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonials section -->
+    <section class="testimonials py-5" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="display-4 fw-bold theme-text-secondary mb-3">What our <span class="high-text">clients</span>
+                        say</h4>
+                    <p class="mb-3 theme-text-accent-one lh-lg">Create a best experience like our happy
+                        customers,
+                        already feels</p>
+                </div>
+            </div>
+            <!-- testimonials slider content-->
+            <div class="row">
+                <div class="owl-carousel owl-theme" id="carouselReview">
+                    <div class="col-12 position-relative item">
+                        <div class="p-5 mt-5 mt-lg-0 theme-box-shadow theme-border-radius theme-bg-white text-center">
+                            <div class="d-flex flex-column justify-content-center mt-4">
+                                <div class="pic-wrap">
+                                    <figure class="mb-0 avatar">
+                                        <img src="static/picture/customer-avtar01.png" class="img-fluid" alt="client review">
+                                    </figure>
+                                </div>
+                                <span class="text-yellow my-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="mt-0"><strong>Pooja Hedge</strong></span>
+                                <span class="theme-text-accent-one font-small mb-3 fw-bold">Smart Travel</span>
+                            </div>
+                            <p class="theme-text-accent-one lh-lg font-small mb-0 pt-3 border-top">This is the 3rd
+                                time
+                                I’ve used Travelo website and telling you the truth their services are always
+                                realiable
+                                and it only takes few minutes to plan and finalize</p>
+                        </div>
+                    </div><!-- repeatable-->
+                    <div class="col-12 position-relative item">
+                        <div class="p-5 mt-5 mt-lg-0 theme-box-shadow theme-border-radius theme-bg-white text-center">
+                            <div class="d-flex flex-column justify-content-center mt-4">
+                                <div class="pic-wrap">
+                                    <figure class="mb-0 avatar">
+                                        <img src="static/picture/customer-avtar02.png" class="img-fluid" alt="client review">
+                                    </figure>
+                                </div>
+                                <span class="text-yellow my-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="mt-0"><strong>Kartika Aryan</strong></span>
+                                <span class="theme-text-accent-one font-small mb-3 fw-bold">Tech Travel</span>
+                            </div>
+                            <p class="theme-text-accent-one lh-lg font-small mb-0 pt-3 border-top">This is the 3rd
+                                time
+                                I’ve used Travelo website and telling you the truth their services are always
+                                realiable
+                                and it only takes few minutes to plan and finalize</p>
+                        </div>
+                    </div><!-- repeatable-->
+                    <div class="col-12 position-relative item">
+                        <div class="p-5 mt-5 mt-lg-0 theme-box-shadow theme-border-radius theme-bg-white text-center">
+                            <div class="d-flex flex-column justify-content-center mt-4">
+                                <div class="pic-wrap">
+                                    <figure class="mb-0 avatar">
+                                        <img src="static/picture/customer-avtar03.png" class="img-fluid" alt="client review">
+                                    </figure>
+                                </div>
+                                <span class="text-yellow my-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="mt-0"><strong>Ananya Pandey</strong></span>
+                                <span class="theme-text-accent-one font-small mb-3 fw-bold">Holiday Travel</span>
+                            </div>
+                            <p class="theme-text-accent-one lh-lg font-small mb-0 pt-3 border-top">This is the 3rd
+                                time
+                                I’ve used Travelo website and telling you the truth their services are always
+                                realiable
+                                and it only takes few minutes to plan and finalize</p>
+                        </div>
+                    </div><!-- repeatable-->
+                    <div class="col-12 position-relative item">
+                        <div class="p-5 mt-5 mt-lg-0 theme-box-shadow theme-border-radius theme-bg-white text-center">
+                            <div class="d-flex flex-column justify-content-center mt-4">
+                                <div class="pic-wrap">
+                                    <figure class="mb-0 avatar">
+                                        <img src="static/picture/customer-avtar04.png" class="img-fluid" alt="client review">
+                                    </figure>
+                                </div>
+                                <span class="text-yellow my-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </span>
+                                <span class="mt-0"><strong>Ross Taylor</strong></span>
+                                <span class="theme-text-accent-one font-small mb-3 fw-bold">Holiday Travel</span>
+                            </div>
+                            <p class="theme-text-accent-one lh-lg font-small mb-0 pt-3 border-top">This is the 3rd
+                                time
+                                I’ve used Travelo website and telling you the truth their services are always
+                                realiable
+                                and it only takes few minutes to plan and finalize</p>
+                        </div>
+                    </div><!-- repeatable-->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- partner section -->
+    <section class="py-5" id="partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="display-4 fw-bold theme-text-secondary mb-3">Our Tour<span class="high-text">
+                            Partner</span>
+                    </h4>
+                    <p class="mb-3 theme-text-accent-one lh-lg">There are many variations of passages of Lorem Ipsume
+                        available,
+                        but the majority have suffered alteration.</p>
+                </div>
+            </div>
+            <div class="row align-items-center carouselPartner">
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner01.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner02.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner03.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner04.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner05.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="static/picture/partner06.png" class="img-fluid img-lt" alt="Partner">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Part -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-0 subscribe" id="contact">
+                <div class="col-12 col-lg-12 box">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 m-auto text-center">
+                            <h4 class="display-4 fw-bold theme-text-secondary mb-3">Subscribe to Get Special
+                                <span class="high-text">Offers</span>
+                            </h4>
+                            <p class="mb-3 theme-text-accent-one lh-lg">Don't wanna miss somethings? Subscribe right now
+                                and get special
+                                promotion and monthly newsletter</p>
+                        </div>
+                        <div class="col-12 col-lg-8 offset-lg-2 mt-5">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-0 rounded-pill" placeholder="Enter Your Email">
+                                <button class="btn custom-btn-primary button-effect px-3 px-lg-5" type="button" id="button-addon2"><i class="bi bi-send-check me-1"></i>
+                                    <span>Subscribe</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12 col-lg-4 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center p-0 p-md-5">
+                        <div class="flex-shrink-0 circle">
+                            <i class="bi bi-phone-fill fs-4 lh-1"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3 fw-bold">
+                            Phone <br>
+                            <span class="fs-5"> 0(110) 985-65-24</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-3 mb-md-0 p-0 p-md-5">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 circle">
+                            <i class="bi bi-envelope-fill fs-4 lh-1"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3 fw-bold">
+                            Email <br>
+                            <a href="#" class="fs-5 text-reset">enquiry@example.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-3 mb-md-0 p-0 p-md-5">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 circle">
+                            <i class="bi bi-chat-dots-fill fs-4 lh-1"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3 fw-bold">
+                            Chat Support <br>
+                            <span class="fs-5"> 0(110) 985-65-24</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-lg-3">
+                    <img src="static/picture/brand-dark.png" class="img-fluid" alt="Brand Dark">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <ul class="footer-link d-flex flex-row flex-wrap justify-content-center align-items-center">
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class=" d-flex social justify-content-center justify-content-md-end">
+                        <a href="javascript:void(0)" class="fs-4 pe-3"><i class="bi bi-facebook"></i></a>
+                        <a href="javascript:void(0)" class="fs-4 pe-3"><i class="bi bi-twitter"></i></a>
+                        <a href="javascript:void(0)" class="fs-4 pe-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="javascript:void(0)" class="fs-4"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-12 col-lg-12 text-center">
+                    <p class="pt-2 mb-0 font-small">Copyright &copy; 2023.Company name All rights reserved.<a target="_blank" href="https://www.genban.org/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="#wrapper" data-type="section-switch" class="scrollup back-top"><i class="bi bi-airplane"></i>
+            <span class="font-extra-small">Goto Top</span></a>
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="static/js/owl.carousel.min.js"></script>
+    <!--Data Calendar js -->
+    <script src="static/js/jquery-ui.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>

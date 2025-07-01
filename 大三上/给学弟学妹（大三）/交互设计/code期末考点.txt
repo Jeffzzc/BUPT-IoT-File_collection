@@ -1,0 +1,95 @@
+<!-- -->
+<img src="img.jpg" width="500" height="600" alt="fault">
+<a href="http..."> QMUL Homepage </a>
+<p style="color:red"> I am a fool </p>
+<body bgcolor="yellow">
+<p align="center">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+
+button:
+<script> in head
+  function myFunction(){
+    document.getElementById("demo").innerHTML = "hello"}
+</script>
+<p id = "demo"> A paragraph </p>
+<button type="button" onclick="myFunction()"> Try it </button>
+
+<th> <tr> <td>
+<span style="color:red"> xx <span>
+<ul></ul> <ol></ol>
+
+style:
+1. internal in head
+<style>
+  body {bgcolor:red;}
+</style>
+
+2. external in css
+<link rel="stylesheet" type="text/css" href="style.css"> in head
+
+pseudo-class:
+a:link a:visited a:hover a:active p:first-letter
+
+box:
+div{
+width: 320px;
+padding:10px;
+border:5px;
+margin:0px;
+}
+
+@keyframes:
+div{position:relative; animation: fall 5s infinite}
+可添加： animation-name; animation-duration; animation-iteration-count
+@keyframes fall { from{top:0px;} to{top:200px;} }
+可添加： transform:translateY(0);
+
+transition and transform:
+div{width: 100px; transition: width 1s, transform 2s;}
+div:hover{width: 500px; transform: rotate(180deg);}
+
+svg:
+<svg width; height; style;>
+<circle cx; cy; r; stroke; fill;>
+</svg>
+
+JS:
+var myage = 25;
+
+object:
+var student = {surName = "wang", firstName = "Liu"};
+or
+var student = new Object();
+student.firstName = "xy";
+
+class:
+<script>
+class Car{
+  constructor(brand){this.brand = brand};
+  present(){return "1"};
+
+  mycar = new Car("");
+  document.getElementById("demo").innerHTML = mycar.present(); 
+}
+</script>
+
+event listener
+<script>
+  var apple = document.getElementById("apple");
+  apple.addEventListener("mousedown", initalClick, false);
+  apple.addEventListener("mouseup", releaseClick, false);
+
+  function initialClick(e){
+    image = this;
+    document.addEventListener("mousemove", move, false);}
+
+  function move(e){
+    image = this;
+    var newX = e.clientX - 10;
+    var newY = e.clientY - 10;
+    image.style.top = newY + "px";}
+
+  function releaseClick(e){
+    document.removeEventListener("mousemove", move);
+
+</script>

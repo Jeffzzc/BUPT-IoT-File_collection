@@ -1,0 +1,50 @@
+/* Zhiyang Chen */
+.view {
+
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+}
+
+.view .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgb(93, 92, 92);
+    transition: all 0.5s ease-in-out;
+}
+
+.view:hover .mask {
+    opacity: 0.8;
+}
+
+.view img {
+    transition: all 0.2s linear;
+    max-width: 100%;
+}
+
+.view:hover img {
+    transform: scale(1.1);
+}
+
+.view p {
+    color: aliceblue;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+.view h4 {
+    color: aliceblue;
+    text-align: center;
+}
+
+.view:hover p {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.2s;
+}

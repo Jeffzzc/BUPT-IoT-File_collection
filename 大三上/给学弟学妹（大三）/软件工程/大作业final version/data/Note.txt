@@ -1,0 +1,13 @@
+关于curriculum的设置：
+1. id 共 7 项
+2. curriculum 共 7 项， 和id匹配
+3. year 全部设计为 1
+4. semester 全部设计为 2
+5. type 全部设计为 compulsary
+6. credit 全部设计为 3
+7. major 全部设计为 Telecommunications Engineering and Management
+8. day 按照a-b,c;格式设计 a表示星期，bc表示课程节数，同意课程的不同时间段用；隔开。提取时利用正则化提取
+9. teacher_name 随机生成六位英文字符
+10. teacher_email由 teacher_name@qmul.ac.uk 构成
+11. exam_type设计为 open-book
+12. summary， aims，outcomes均为长度为100的随机字符串

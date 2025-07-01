@@ -1,0 +1,11 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Tiffa\\Desktop\\软件工程\\Lab by WuTangxun\\lib\\hamcrest-core-1.3.jar",
+        "c:\\Users\\Tiffa\\Desktop\\软件工程\\Lab by WuTangxun\\lib\\junit-4.12.jar"
+    ]
+}

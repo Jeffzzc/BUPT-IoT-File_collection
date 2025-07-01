@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+    .Main{
+        height: 760px;
+		width: 560px;
+		border: 3px solid green;
+		padding: 17px;
+		margin: 0;
+    }
+
+    .TopBar{
+        height: 100px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 30pt;
+		font-weight: bold;
+		color: orange;
+    }
+
+    .Quiz{
+        height: 150px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 45pt;
+		font-weight: bold;
+		color: blue;
+    }
+
+    button{  /* on the Play class */
+		height: 100px;
+		width: 100px;
+		border: none;
+	}
+
+    button:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+
+	button:focus{
+		outline:none;
+	}
+ </style>
+</head>
+<body>
+    <div class="Main">
+        <div class="TopBar" id = "message">
+            Quiz Starts!
+        </div>
+        <div class="Quiz" id = "quiz">
+            3 + 2 = ?
+        </div>
+
+        <script>
+            var userInput = "";
+            var left;
+            var right;
+            new_Quiz();
+        
+        function buttonPressed(buttonID){
+		    userInput = userInput + buttonID;
+			document.getElementById("quiz").innerHTML = left + " + " + right + " =  " + "<span style='color: gray;'>" + userInput + "</span>";
+        }
+
+		function checkAnswer(){
+			var result = left + right;
+			if(userInput != ""){
+				if(result.toString() == userInput){
+					document.getElementById("message").innerHTML = "<span style='color: green;'>Well done!</span>";
+					new_Quiz();
+				}
+				else{
+					document.getElementById("message").innerHTML = "<span style='color: red;'>Sorrry! Wrong!</span>";
+				}
+			}
+			else{
+				document.getElementById("message").innerHTML = "<span style='color: Pink;'>Come on! Give a try!</span>";
+			}
+			userInput = "";
+		}
+
+        function new_Quiz(){
+            left = Math.floor((Math.random() * 20) + 1);
+            right = Math.floor((Math.random() * 20) + 1);
+            document.getElementById("quiz").innerHTML = left + " + " + right + " =  ?";
+        }
+
+        </script>
+
+        <div class="Play">
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="1" style="background: url(images/number1.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="2" style="background: url(images/number2.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="3" style="background: url(images/number3.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="4" style="background: url(images/number4.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="5" style="background: url(images/number5.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="6" style="background: url(images/number6.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="7" style="background: url(images/number7.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="8" style="background: url(images/number8.png); background-size: contain;"></button>
+                <button onclick = "buttonPressed(this.id)" id="9" style="background: url(images/number9.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick = "buttonPressed(this.id)" id="0" style="background: url(images/number0.png); background-size: contain;"></button>
+                <button onclick="checkAnswer()" id="enter" style="background: url(images/enter.png); background-size: contain;"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

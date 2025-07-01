@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+@media screen and (max-width: 599px) {
+    img {
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+body {
+    background: #2b2a2b;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+}
+
+h2 {
+    color: #ed666f;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 600px) {
+    .grid-wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 1rem;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 2fr 1fr 2fr;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+article {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #4d4d4d;
+}
+article p {
+    font-family: "Karla", sans-serif;
+    font-size: 0.95rem;
+    color: #c8c8c8;
+}
+article:nth-child(4) {
+    grid-area: 1/2/4/3;
+}
+@media screen and (min-width: 1025px) {
+    article:nth-child(8) {
+        grid-area: 1/4/4/-1;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    article:nth-child(8) {
+        grid-area: 4/2/8/3;
+    }
+}
+@media screen and (min-width: 1025px) {
+    article:nth-child(4n+3) {
+        border-bottom: 0;
+    }
+}
+@media screen and (min-width: 1025px) {
+    article:nth-child(4) {
+        border-right: 1px solid #4d4d4d;
+        padding-right: 1rem;
+    }
+}
+@media screen and (min-width: 600px) {
+    article:nth-child(4n) {
+        border-left: 1px solid #4d4d4d;
+        border-bottom: 0;
+        padding-left: 1rem;
+    }
+}
+
+.footer-note {
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    font-size: 0.9rem;
+    background: white;
+    padding: 1rem;
+    color: black;
+    border-radius: 5px;
+}
+.footer-note a {
+    color: inherit;
+    font-weight: 600;
+}

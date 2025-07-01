@@ -1,0 +1,166 @@
+/*@author:Shi yuang*/
+/* 这段代码是用来设计网页中的卡片效果的，主要包括以下几个部分：
+
+1.卡片缩略图部分（.card_thumb）：设置缩略图的高度、背景颜色和过渡效果，当鼠标悬停在卡片上时，缩略图高度变小，图片透明度降低并放大。
+
+2.卡片横向缩略图部分（.card_thumb_horizontal）：与上述缩略图部分类似，主要是用于横向排列的卡片。
+
+3.卡片内容部分（.card-body）：设置卡片内容的高度、内边距和过渡效果，当鼠标悬停在卡片上时，内容高度变大。
+
+4.卡片分类、标题、副标题和文本部分（.card-category、.card-title、.card-subtitle、.card-text）：分别设置分类、标题、副标题和文本的样式，其中文本在鼠标悬停时会有透明度和位移的过渡效果。
+
+5.卡片底部部分（.card-footer）：设置卡片底部的样式，包括字体大小、颜色和背景颜色。
+
+6.图标部分（.icon）：为了方便在卡片中添加图标，设置了图标的样式，包括字体大小和垂直对齐方式。 */
+          .card_thumb {
+            height: 200px;
+            overflow: hidden;
+            background-color: #000;
+            -webkit-transition: height 0.5s;
+            transition: height 0.5s;
+          }
+          .card_thumb img {
+            display: block;
+            opacity: 1;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+          }
+          .card:hover .card_thumb {
+            height: 130px;
+          }
+
+          .card:hover .card_thumb img {
+            opacity: 0.6;
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+          }
+          .card_thumb_horizontal {
+            width: 200px;
+            overflow: hidden;
+            background-color: #000;
+            -webkit-transition: width 0.5s;
+            transition: width 0.5s;
+          }
+          .card_thumb_horizontal img {
+            display: block;
+            opacity: 1;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+          }
+          .card-horizontal:hover .card_thumb_horizontal {
+            width: 130px;
+          }
+
+          .card-horizontal:hover .card_thumb_horizontal img {
+            opacity: 0.6;
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+          }
+          /**
+          * BODY
+          **/
+          .card-body {
+            position: relative;
+            height: 200px;
+            padding: 20px;
+            -webkit-transition: height 0.5s;
+            transition: height 0.5s;
+          }
+          .card:hover .card-body {
+            height: 400px;
+          }
+
+          .card-category {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            height: 25px;
+            padding: 0 15px;
+            background-color: coral;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 11px;
+            line-height: 25px;
+          }
+
+          .card-title {
+            margin: 0;
+            padding: 0 0 10px 0;
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+
+          .card-subtitle {
+            margin: 0;
+            padding: 0 0 10px 0;
+            font-size: 19px;
+            color: coral;
+          }
+
+          .card-text {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 56px;
+            margin: 0;
+            padding-bottom: 10px;
+            color: #666C74;
+            line-height: 27px;
+            opacity: 0;
+            -webkit-transform: translateY(90px);
+                    transform: translateY(90px);
+            -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+            transition: opacity 0.3s, -webkit-transform 0.3s;
+            transition: opacity 0.3s, transform 0.3s;
+            transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+            -webkit-transition-delay: 0s;
+                    transition-delay: 0s;
+          }
+          .card:hover .card-text {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+            -webkit-transition-delay: 0.2s;
+                    transition-delay: 0.2s;
+          }
+          .card-horizontal:hover .card-text {
+            opacity: 1;
+            -webkit-transform: translateY(170px);
+                    transform: translateY(170px);
+            -webkit-transition-delay: 0.2s;
+                    transition-delay: 0.2s;
+          }
+
+          .card-footer {
+            position: absolute;
+            bottom: 12px;
+            left: 0px;
+            right: 20px;
+            font-size: 11px;
+            color: #A3A9A2;
+            background-color: #fff;
+          }
+
+          .icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin: -2px 0 0 2px;
+            font-size: 18px;
+          }
+          .icon + .icon {
+            padding-left: 10px;
+          }
+
+照片格式
+
+.img-fluid{max-width:100%;height:auto}

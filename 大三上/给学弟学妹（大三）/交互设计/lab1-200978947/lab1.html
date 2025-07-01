@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+    .Main{
+        height: 760px;
+		width: 560px;
+		border: 3px solid green;
+		padding: 17px;
+		margin: 0;
+    }
+
+    .TopBar{
+        height: 100px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 30pt;
+		font-weight: bold;
+		color: orange;
+    }
+
+    .Quiz{
+        height: 150px;
+		width: 560px;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-family:normal;
+		font-size: 60pt;
+		font-weight: bold;
+		color: blue;
+    }
+
+    button{  /* on the Play class */
+		height: 100px;
+		width: 100px;
+		border: none;
+	}
+
+    button:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+
+	button:focus{
+		outline:none;
+	}
+ </style>
+</head>
+<body>
+    <div class="Main">
+        <div class="TopBar">
+            Quiz Starts!
+        </div>
+        <div class="Quiz">
+            3 + 2 = ?
+        </div>
+        <div class="Play">
+            <div style="text-align: center;">
+                <button style="background: url(images/number1.png); background-size: contain;"></button>
+                <button style="background: url(images/number2.png); background-size: contain;"></button>
+                <button style="background: url(images/number3.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button style="background: url(images/number4.png); background-size: contain;"></button>
+                <button style="background: url(images/number5.png); background-size: contain;"></button>
+                <button style="background: url(images/number6.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button style="background: url(images/number7.png); background-size: contain;"></button>
+                <button style="background: url(images/number8.png); background-size: contain;"></button>
+                <button style="background: url(images/number9.png); background-size: contain;"></button>
+            </div>
+            <div style="text-align: center;">
+                <button style="background: url(images/number0.png); background-size: contain;"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

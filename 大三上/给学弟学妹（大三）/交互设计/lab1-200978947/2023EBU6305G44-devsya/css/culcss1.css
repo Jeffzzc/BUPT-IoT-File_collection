@@ -1,0 +1,318 @@
+* {margin: 0;padding: 0;list-style: none;}
+body{ color: #220a05; background: #220a05; font-weight: normal; }
+img{border: none;}
+a{text-decoration: none; outline:none;  color: #4d1d12;}
+a:hover{color: #ee8040;}
+
+input{outline: none; border: none; background: none;font-family:"Microsoft Yahei", arial,sans-serif;}
+h1,h2,h3,h4,h5,p{font-family:"Microsoft Yahei", arial,sans-serif; }
+em,h2,h1,h3,i{font-style: normal; font-weight: normal;}
+em,span{display: inline-block;}
+
+.textmiddle{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top:400px;
+    position: absolute;
+    margin: auto;
+    width: 60%;
+    right: 20%;
+    font-size: 50px;
+    font-family: "UD Digi Kyokasho NK-B";
+    font-weight: 700;
+    color:white;
+}
+/* .intro{
+background: url(../img/3.JPG) no-repeat center;
+background-size: cover;
+}
+.intro>.protectop{
+    position: relative;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.protectop::before{
+    position: absolute;
+    content:"";
+    top: 0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: rgba(255,255,255,0.3);
+    z-index:-1;
+} */
+
+/* #box1{
+    background: url(../img/3.JPG) no-repeat;
+    background-attachment: scroll;
+    position: fixed;
+    width: 100%;
+    overflow: auto;
+}
+
+.box2{
+    line-height: 100px;
+    font-size: 40px;
+    text-align: center;
+    width:50%;
+}*/
+
+.introtit{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+    left:15%;
+    right:45%;
+    font-family: "UD Digi Kyokasho NK-B";
+    font-weight: 700;
+    font-size: 45px;
+    color: #2F4F4F;
+}
+.introtext{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+    left:15%;
+    right:45%;
+    font-family: "UD Digi Kyokasho NK-B";
+    font-weight: 700;
+    font-size: 20px;
+    color: #2f4f4f;
+    margin-bottom: 100px;
+}
+/* .introimg{
+    margin-top: 150px;
+    float: right;
+    width: 40%;
+    left:30%;
+    right:30%;
+
+}  */
+/* .entertain{
+    padding-left: 10%;
+    padding-right: 10%;
+    vertical-align: middle;
+
+} */
+.entertain1{
+    margin-top: 150px;
+    text-align: center;
+    vertical-align: middle;
+    width:50%;
+    display:inline;
+}
+.entertain2{
+    /* margin-top: 150px; */
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+    width:50%;
+
+}
+.about-section {
+    background-image: url('../img/2.JPG');
+    background-color: #704010;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.container{
+    max-width: 540px;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.d-flex {
+    display: flex!important;
+}
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.about-text-wrap {
+    position: relative;
+}
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+    font-family: "UD Digi Kyokasho NK-B";
+}
+.entertain1-section {
+    background-image: url('../img/7.JPG');
+    background-color: #704010;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.link-fx-1 {
+    color: var(--white-color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 6px;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.link-fx-1:hover {
+    color: var(--link-hover-color);
+}
+
+.link-fx-1:hover::before {
+    transform: translateX(17px) scaleX(0);
+    transition: transform .2s;
+}
+
+.link-fx-1:hover .icon circle {
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset .2s .1s;
+}
+
+.link-fx-1:hover .icon line {
+    transform: rotate(-180deg);
+}
+
+.link-fx-1:hover .icon line:last-child {
+    transform: rotate(180deg);
+}
+
+.link-fx-1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform-origin: right center;
+    transition: transform .2s .1s;
+}
+
+.link-fx-1 .icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%) rotate(90deg);
+    font-size: 32px;
+}
+.icon {
+    --size: 1em;
+    height: var(--size);
+    width: var(--size);
+    display: inline-block;
+    color: inherit;
+    fill: currentColor;
+    line-height: 1;
+    flex-shrink: 0;
+    max-width: initial;
+}
+
+.link-fx-1 .icon circle {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset .2s;
+}
+
+.link-fx-1 .icon line {
+    transition: transform .4s;
+    transform-origin: 13px 15px;
+}
+
+.link-fx-1 .icon line:last-child {
+    transform-origin: 19px 15px;
+}
+.pricing-thumb .link-fx-1 {
+    color: #2F4F4F;
+}
+
+.pricing-thumb .link-fx-1:hover {
+    color: #2F4F4F;
+}
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+a, button {
+    touch-action: manipulation;
+    transition: all 0.3s;
+}
+.covercul {
+    position: relative;
+    width: 80%;
+    height: 50%;
+}
+.covercul::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+    background-image: linear-gradient(90deg, rgb(185, 221, 250), transparent);
+}
+
+.covercul::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+    background-image: linear-gradient(-90deg, rgb(185, 221, 250), transparent);
+}
+.section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.section-bg {
+    background-color: #f0f8ff;
+}
+.food{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+.mx-auto {
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+.text-center {
+    text-align: center!important;
+}
+.pricing-thumb {
+    border: 5px dotted black;
+    border-radius: var(--border-radius-medium);
+    position: relative;
+    padding: 35px;
+}
